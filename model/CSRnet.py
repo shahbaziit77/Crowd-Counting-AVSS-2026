@@ -31,7 +31,7 @@ class CoarseNet(nn.Module):
         # MobileNetV1_0.25
         #----------------------------------
 #         backbone = MobileNetV1_0_25()         # Backbone: MobileNetV1_0.25
-#         checkpoint = torch.load("/Path/to/your/pretrained/weights/mobilenetV1X0.25_pretrain.tar", map_location=torch.device('cpu'))  
+#         checkpoint = torch.load("./weights/Pretrained_weights/mobilenetV1X0.25_pretrain.tar", map_location=torch.device('cpu'))  
 #         # from collections import OrderedDict
 #         new_state_dict = OrderedDict()
 #         for k, v in checkpoint['state_dict'].items():      
@@ -52,7 +52,7 @@ class CoarseNet(nn.Module):
         # MobileNetV1_0.5
         #-----------------------------------
 #         backbone = MobileNetV1_0_5()          # Backbone: MobileNetV1_0.5
-#         checkpoint = torch.load("/Path/to/your/pretrained/weights/MobileNetV1x0_5.tar", map_location=torch.device('cpu'))  
+#         checkpoint = torch.load("./weights/Pretrained_weights/MobileNetV1x0_5.tar", map_location=torch.device('cpu'))  
 #         backbone.load_state_dict(checkpoint['state_dict'])
 #         self.body = _utils.IntermediateLayerGetter(backbone, {'stage1': 1, 'stage2': 2, 'stage3': 3})  # MobileNetV1_0.25/0.5/1.0   
 #         in_channels_list = [    # MobileNetV1_0.5   
@@ -65,7 +65,7 @@ class CoarseNet(nn.Module):
         # MobileNetV1_1.0
         #-----------------------------------
 #         backbone = MobileNetV1_1_0()          # Backbone: MobileNetV1_1.0
-#         checkpoint = torch.load("/Path/to/your/pretrained/weights/MobileNetV1.tar", map_location=torch.device('cpu'))  
+#         checkpoint = torch.load(".weights/Pretrained_weights/MobileNetV1.tar", map_location=torch.device('cpu'))  
 #         backbone.load_state_dict(checkpoint['state_dict'])
 #         self.body = _utils.IntermediateLayerGetter(backbone, {'stage1': 1, 'stage2': 2, 'stage3': 3})  # MobileNetV1_0.25/0.5/1.0  
 #         in_channels_list = [    # MobileNetV1_1.0  
@@ -177,7 +177,7 @@ class CoarseNet(nn.Module):
         # BBLiteV4
         #----------------------------------
 #         backbone = BBLiteV4()         # Backbone: BBLiteV4
-#         checkpoint = torch.load("/Path/to/your/pretrained/weights/BBLiteV4.pth.tar", map_location=torch.device('cpu'))  
+#         checkpoint = torch.load("./weights/Pretrained_weights/BBLiteV4.pth.tar", map_location=torch.device('cpu'))  
        
 #         # load params   
 #         backbone.load_state_dict(checkpoint['state_dict'])   
@@ -241,4 +241,5 @@ class CascadedCrowdNet(nn.Module):
         x = self.model1(x)
         x = self.model2(x)
         return x    
+
 
