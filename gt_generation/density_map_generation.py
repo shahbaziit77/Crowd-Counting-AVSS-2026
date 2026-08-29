@@ -47,12 +47,12 @@ def gaussian_filter_density(gt):
         density += gaussian_filter(pt2d, sigma, mode='constant') 
 
     print('done.')                           
-    return density   
+    return density 
 
 #=====================================================================================================================================================
 
 # Density map generation: Create a function to generate the density maps using fixed gaussian kernel for the images
-def generate_density_map_fixed_gaussian_kernel(img, points, kernel_size=15, sigma=10.0):    
+def generate_density_map_fixed_gaussian_kernel(img, points, kernel_size=15, sigma=10.0):
     '''
     Generate ground truth (GT) density map for crowd counting.
     
@@ -87,7 +87,7 @@ def generate_density_map_fixed_gaussian_kernel(img, points, kernel_size=15, sigm
         return f
 
     
-    [rows, cols] = [img.shape[0], img.shape[1]]  
+    [rows, cols] = [img.shape[0], img.shape[1]]
     
     # Create an empty density map with the same shape as the input image
     density_map = np.zeros([rows, cols])
@@ -120,7 +120,7 @@ def generate_density_map_fixed_gaussian_kernel(img, points, kernel_size=15, sigm
 
 # # Generate the ground truth (GT) values for images in ShanghaiTech Part_A 
 # # Root of the ShanghaiTech dataset
-# root = '/home/shahbaz/Desktop/Crowd_Counting/Crowd_Counting_datasets/modified_datasets/ShanghaiTech_dataset_New2' 
+# root = './dataset/ShanghaiTech_dataset' 
         
 # part_A_train = os.path.join(root, 'part_A_final/train_data', 'images')                       
 # part_A_test = os.path.join(root, 'part_A_final/test_data', 'images')                       
@@ -147,34 +147,40 @@ def generate_density_map_fixed_gaussian_kernel(img, points, kernel_size=15, sigm
 
 # Generate the ground truth (GT) values for images in ShanghaiTech/UCF_CC_50/UCF-QNRF/WorldExpo'10/NWPU-Crowd/JHU-CROWD++ dataset
 # Root of the ShanghaiTech/UCF_CC_50/UCF-QNRF/WorldExpo'10/NWPU-Crowd/JHU-CROWD++ dataset
-root = '/home/shahbaz/Desktop/Crowd_Counting_datasets/NWPU-Crowd_dataset_New2' 
+root = './dataset/ShanghaiTech_dataset' 
 
-# # ShanghaiTech dataset:
-# part_A_train = os.path.join(root, 'part_A_final/train_data', 'images')                       
-# part_A_test = os.path.join(root, 'part_A_final/test_data', 'images')                       
-# part_B_train = os.path.join(root, 'part_B_final/train_data', 'images')                       
-# part_B_test = os.path.join(root, 'part_B_final/test_data', 'images')                             
+# ShanghaiTech dataset:
+part_A_train = os.path.join(root, 'part_A_final/train_data', 'images')                       
+part_A_test = os.path.join(root, 'part_A_final/test_data', 'images')                       
+part_B_train = os.path.join(root, 'part_B_final/train_data', 'images')                       
+part_B_test = os.path.join(root, 'part_B_final/test_data', 'images')                             
 
 # # UCF_CC_50 dataset:
 # image_path = os.path.join(root, 'UCF_CC_50', 'images')  
+
+# # UCF-QNRF dataset:
+# train_path = os.path.join(root, 'train', 'images')  
+# test_path = os.path.join(root, 'test', 'images')
 
 # # WorldExpo'10 dataset:
 # train_path = os.path.join(root, 'train', 'img')                       
 # test_path = os.path.join(root, 'test/test_New/S1', 'img')                       
 
-# UCF-QNRF/NWPU-Crowd/JHU-CROWD++ dataset:
-train_path = os.path.join(root, 'train', 'images')  
-val_path = os.path.join(root, 'val', 'images')                       
-test_path = os.path.join(root, 'test', 'images')                       
+# # JHU-CROWD++ dataset:
+# train_path = os.path.join(root, 'train', 'images')  
+# val_path = os.path.join(root, 'val', 'images')                       
+# test_path = os.path.join(root, 'test', 'images')                       
 
 
 # # ShanghaiTech dataset:
-# # Setting the image locations
-# path_sets_A = [part_A_train, part_A_test]  
-# test_path_sets_A = [part_A_test]  
+# Setting the image locations
+path_sets_A = [part_A_train, part_A_test] 
+train_path_sets_A = [part_A_train]  
+test_path_sets_A = [part_A_test]  
 
-# path_sets_B = [part_B_train, part_B_test]                       
-# test_path_sets_B = [part_B_test]
+path_sets_B = [part_B_train, part_B_test]
+train_path_sets_B = [part_B_train]                         
+test_path_sets_B = [part_B_test]
 
 # # Define the image path
 # img_paths = [] 
@@ -182,17 +188,29 @@ test_path = os.path.join(root, 'test', 'images')
 #     for img_path in glob.glob(os.path.join(path, '*.jpg')):             
 #         img_paths.append(img_path)
 
-# # Define the test image path for ShanghaiTech Part_A
-# test_img_paths_A = []
-# for path in test_path_sets_A: 
-#     for img_path in glob.glob(os.path.join(path, '*.jpg')): 
-#         test_img_paths_A.append(img_path) 
+# Define the train image path for ShanghaiTech Part_A
+train_img_paths_A = []
+for path in train_path_sets_A: 
+    for img_path in glob.glob(os.path.join(path, '*.jpg')): 
+        train_img_paths_A.append(img_path) 
 
-# # Define the test image path for ShanghaiTech Part_B
-# test_img_paths_B = []
-# for path in test_path_sets_B: 
-#     for img_path in glob.glob(os.path.join(path, '*.jpg')): 
-#         test_img_paths_B.append(img_path) 
+# Define the test image path for ShanghaiTech Part_A
+test_img_paths_A = []
+for path in test_path_sets_A: 
+    for img_path in glob.glob(os.path.join(path, '*.jpg')): 
+        test_img_paths_A.append(img_path) 
+
+# Define the train image path for ShanghaiTech Part_B
+train_img_paths_B = []
+for path in train_path_sets_B: 
+    for img_path in glob.glob(os.path.join(path, '*.jpg')): 
+        train_img_paths_B.append(img_path) 
+
+# Define the test image path for ShanghaiTech Part_B
+test_img_paths_B = []
+for path in test_path_sets_B: 
+    for img_path in glob.glob(os.path.join(path, '*.jpg')): 
+        test_img_paths_B.append(img_path) 
 
 # # UCF_CC_50 dataset:
 # # Setting the image locations                      
@@ -204,29 +222,29 @@ test_path = os.path.join(root, 'test', 'images')
 #     for img_path in glob.glob(os.path.join(path, '*.jpg')):             
 #         img_paths.append(img_path)
 
-# UCF-QNRF/WorldExpo'10/NWPU-Crowd/JHU-CROWD++ dataset: 
-# Setting the image locations                      
-train_path_sets = [train_path] 
-val_path_sets = [val_path] 
-test_path_sets = [test_path]
+# # UCF-QNRF/WorldExpo'10/JHU-CROWD++ dataset: 
+# # Setting the image locations                      
+# train_path_sets = [train_path] 
+# val_path_sets = [val_path] 
+# test_path_sets = [test_path]
 
-# Define the train image path
-train_img_paths = [] 
-for path in train_path_sets:                           
-    for img_path in glob.glob(os.path.join(path, '*.jpg')):             
-        train_img_paths.append(img_path)
+# # Define the train image path
+# train_img_paths = [] 
+# for path in train_path_sets:                           
+#     for img_path in glob.glob(os.path.join(path, '*.jpg')):             
+#         train_img_paths.append(img_path)
 
-# Define the val image path
-val_img_paths = [] 
-for path in val_path_sets:                           
-    for img_path in glob.glob(os.path.join(path, '*.jpg')):             
-        val_img_paths.append(img_path)                               
+# # Define the val image path
+# val_img_paths = [] 
+# for path in val_path_sets:                           
+#     for img_path in glob.glob(os.path.join(path, '*.jpg')):             
+#         val_img_paths.append(img_path)                               
 
-# Define the test image path      
-test_img_paths = [] 
-for path in test_path_sets:                           
-    for img_path in glob.glob(os.path.join(path, '*.jpg')):             
-        test_img_paths.append(img_path)   
+# # Define the test image path      
+# test_img_paths = [] 
+# for path in test_path_sets:                           
+#     for img_path in glob.glob(os.path.join(path, '*.jpg')):             
+#         test_img_paths.append(img_path)   
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -263,25 +281,25 @@ for path in test_path_sets:
 
 # -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-# # Plot a sample image and its ground truth density map
-# plt.imshow(Image.open(val_img_paths[0])) 
-# plt.show() 
+# Plot a sample image and its ground truth density map
+plt.imshow(Image.open(test_img_paths_B[0]))  
+plt.show()
 
-# # Show the density map corresponding to the image
-# gt_file = h5py.File(val_img_paths[0].replace('.jpg', '.h5').replace('images', 'ground_truth/GT_h5_FGK_sigma_15'), 'r') 
-# ground_truth = np.asarray(gt_file['density']) 
-# plt.imshow(ground_truth, cmap=CM.jet)
-# plt.title("Ground Truth (GT) Density Map")    
-# plt.show()   
+# Show the density map corresponding to the image
+gt_file = h5py.File(test_img_paths_B[0].replace('.jpg', '.h5').replace('images', 'ground-truth/GT_h5_GAK'), 'r') 
+ground_truth = np.asarray(gt_file['density']) 
+plt.imshow(ground_truth, cmap=CM.jet)
+plt.title("Ground Truth (GT) Density Map")    
+plt.show()  
 
-# # Count the no. of people present in this image
-# gt_count = np.sum(ground_truth)
-# print("GT count: ", gt_count)
-# exit()         
+# Count the no. of people present in this image
+gt_count = np.sum(ground_truth)
+print("GT count: ", gt_count)    
+      
 
 # # Show the density map corresponding to the image
 # # Density map
-# file_path = '/home/phd/a.shahbaz/ShanghaiTech_dataset_New2/part_A_final/train_data/ground-truth/GT_h5_2/IMG_100.h5'
+# file_path = './dataset/ShanghaiTech_dataset/part_A_final/train_data/ground-truth/GT_h5_GAK/IMG_100.h5'
 # gt_file = h5py.File(file_path, 'r')
 # ground_truth = np.asarray(gt_file['density'])
 # plt.imshow(ground_truth, cmap=CM.CMRmap)
@@ -292,7 +310,7 @@ for path in test_path_sets:
 # print("GT count: ", gt_count)   
 
 # # Open the image corresponding to the density map
-# file = '/home/phd/a.shahbaz/ShanghaiTech_dataset_New2/part_A_final/train_data/ground-truth/GT_h5_2/IMG_100.h5'  
+# file = './dataset/ShanghaiTech_dataset/part_A_final/train_data/ground-truth/GT_h5_GAK/IMG_100.h5'  
 # image = Image.open(file.replace('.h5', '.jpg').replace('ground-truth/GT_h5_2', 'images'))
 # plt.imshow(image)
 # plt.title("Crowd Image")   
@@ -320,12 +338,12 @@ for path in test_path_sets:
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 # Creating a density map for the ShanghaiTech/UCF_CC_50/UCF-QNRF/WorldExpo'10/NWPU-Crowd/JHU-CROWD++ dataset                                              
-for img_path in train_img_paths:                           
-    print(img_path) 
+for img_path in test_img_paths_B:                           
+    print(img_path)  
 
-    # # ShanghaiTech dataset:
-    # mat = io.loadmat(img_path.replace('.jpg', '.mat').replace('images', 'ground-truth').replace('IMG_', 'GT_IMG_'))                           
-    # img = plt.imread(img_path)
+    # ShanghaiTech dataset:
+    mat = io.loadmat(img_path.replace('.jpg', '.mat').replace('images', 'ground-truth').replace('IMG_', 'GT_IMG_'))                           
+    img = plt.imread(img_path)
 
     # # UCF_CC_50 dataset:
     # mat = io.loadmat(img_path.replace('.jpg', '.mat').replace('images', 'ground_truth').replace('img_', 'ann_'))                           
@@ -336,34 +354,25 @@ for img_path in train_img_paths:
     # img = plt.imread(img_path)     
     
     # # WorldExpo'10 dataset:
-    # csv = pd.read_csv(img_path.replace('.jpg', '.csv').replace('img', 'den')) 
+    # csv = pd.read_csv(img_path.replace('.jpg', '.csv').replace('img', 'den'))  
     # img = plt.imread(img_path) 
-
-    # NWPU-Crowd dataset:
-    mat = io.loadmat(img_path.replace('.jpg', '.mat').replace('images', 'ground_truth'))                          
-    img = plt.imread(img_path)  
-
-    h, w = img.shape[:2]  
-
+    
     # # JHU-CROWD++ dataset:
-    # txt = np.loadtxt(img_path.replace('.jpg', '.txt').replace('images', 'gt'))                       
-    # img = plt.imread(img_path)  
+    # txt = np.loadtxt(img_path.replace('.jpg', '.txt').replace('images', 'gt')) 
+    # img = plt.imread(img_path)
     
 
 #===========================================================================================================================================================   
     
-    # # Generating density map using geometry-adaptive kernel:
+    # Generating density map using geometry-adaptive kernels (GAK):
     # k = np.zeros((img.shape[0], img.shape[1]))  
     
     # # Extracting the head annotations 
-    # # # ShanghaiTech:                      
-    # # gt = mat["image_info"][0,0][0,0][0]       # 1546 person * 2 (col, row) 
+    # # ShanghaiTech:                      
+    # gt = mat["image_info"][0,0][0,0][0]       # 1546 person * 2 (col, row) 
 
-    # # # UCF_CC_50/UCF-QNRF:
-    # # gt = mat["annPoints"]        # 1546 person * 2 (col, row) 
-
-    # # NWPU-Crowd:
-    # gt = mat["annPoints"]        # 1546 person * 2 (col, row)  
+    # # UCF_CC_50/UCF-QNRF:
+    # gt = mat["annPoints"]        # 1546 person * 2 (col, row)   
    
     # for i in range(0, len(gt)):                               
     #     if int(gt[i][1]) < img.shape[0] and int(gt[i][0]) < img.shape[1]:                                   
@@ -371,63 +380,52 @@ for img_path in train_img_paths:
 
     # k = gaussian_filter_density(k) 
 
-    # with h5py.File(img_path.replace('.jpg', '.h5').replace('images', 'ground_truth/GT_h5_GAK'), 'w') as hf:                                            
+    # with h5py.File(img_path.replace('.jpg', '.h5').replace('images', 'ground-truth'), 'w') as hf:                                            
     #     hf['density'] = k  
-     
+
 #=============================================================================================================================================================    
     
-    # Generating density map using fixed Gaussian kernel:
-    # # Extracting the head annotations
-    # # # ShanghaiTech:
-    # # pts = mat["image_info"][0,0][0,0][0]        # 1546 person * 2 (col, row)  
-
-    # # # UCF_CC_50/UCF-QNRF:
-    # # pts = mat["annPoints"]        # 1546 person * 2 (col, row)
+    # Generating density map using fixed Gaussian kernel (FGK):
+    # Extracting the head annotations
+    # ShanghaiTech:
+    pts = mat["image_info"][0,0][0,0][0]        # 1546 person * 2 (col, row) 
     
-    # # # WorldExpo'10:
-    # # # Access the data
-    # # x_coords = csv.iloc[:, 0]          # Assuming the first column is x coordinates
-    # # y_coords = csv.iloc[:, 1]          # Assuming the second column is y coordinates
-    # # pts = [x_coords, y_coords] 
-
-    # NWPU-Crowd:
-    pts = mat["annPoints"]        # 1546 person * 2 (col, row) 
+    # # UCF_CC_50/UCF-QNRF:
+    # pts = mat["annPoints"]        # 1546 person * 2 (col, row)
     
-    # # # JHU-CROWD++:
-    # # # Access the data
-    # # x_coords = txt[:, 0]               # Assuming the first column is x coordinates
-    # # y_coords = txt[:, 1]               # Assuming the second column is y coordinates
-    # # pts = [x_coords, y_coords]
+    # # WorldExpo'10:
+    # # Access the data
+    # x_coords = csv.iloc[:, 0]          # Assuming the first column is x coordinates
+    # y_coords = csv.iloc[:, 1]          # Assuming the second column is y coordinates
+    # pts = [x_coords, y_coords] 
     
+    # JHU-CROWD++:
+    # Access the data
+    # x_coords = txt[:, 0]               # Assuming the first column is x coordinates
+    # y_coords = txt[:, 1]               # Assuming the second column is y coordinates
+    # pts = [x_coords, y_coords]
+   
     points = []
 
-    # Check for the empty annotations
-    # if 'annPoints' in mat and len(mat['annPoints']) == 0:
-    if len(pts) == 0:
-        # Generate a zero density map
-        print('Generate a zero density map')
-        density_map = np.zeros((h, w), dtype=np.float32) 
-        print('Density map done.')
+    for pt in pts:
+        x, y = pt[0], pt[1]
+        points.append([y, x])             # Convert (col, row) to (row, col)  
 
-        with h5py.File(img_path.replace('.jpg', '.h5').replace('images', 'ground_truth/GT_h5_FGK_sigma_10'), 'w') as hf:                                         
-            hf['density'] = density_map  
-    else:
-        for pt in pts:
-            x, y = pt[0], pt[1]   
-            points.append([y, x])             # Convert (col, row) to (row, col)   
-        
     # for i in range(pts[0].shape):
     #     x, y = pts[0][i], pts[1][i]   
-    #     points.append([y, x])     # Convert (col, row) to (row, col)    
-
+    #     points.append([y, x])     # Convert (col, row) to (row, col)  
+    
     # for line in csv:
     #     # x, y = line.strip().split(',')                    
     #     # x, y = map(int, line.strip().split(','))          
     #     # parts = line.strip().split(',')  
     #     # x, y = int(parts[0]), int(parts[1])                 
     #     points.append([y, x])                               # Convert (col, row) to (row, col)                           
-             
-            density_map = generate_density_map_fixed_gaussian_kernel(img, points)    
     
-            with h5py.File(img_path.replace('.jpg', '.h5').replace('images', 'ground_truth/GT_h5_FGK_sigma_10'), 'w') as hf:                                         
-                hf['density'] = density_map             
+        density_map = generate_density_map_fixed_gaussian_kernel(img, points)    
+    
+        with h5py.File(img_path.replace('.jpg', '.h5').replace('images', 'ground-truth/GT_h5_FGK_sigma_10'), 'w') as hf:                                                
+            hf['density'] = density_map                                
+
+
+
