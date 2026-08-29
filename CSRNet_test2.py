@@ -365,7 +365,7 @@ image = np.asarray(Image.open(image_path).convert('RGB'))
 image_resized_np = cv2.resize(image, (256, 256), interpolation=cv2.INTER_CUBIC) 
 print('Image size: ', image_resized_np.shape)   
 
-# image = resize_image(image_path, subplot_size)    
+# image = resize_image(image_path, subplot_size)         
 
 #=====================================================================================================
 
