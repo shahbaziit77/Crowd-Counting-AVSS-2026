@@ -550,7 +550,6 @@ class CAM(nn.Module):
         channel_attention = fc_max + fc_avg
         #channel_attention = self.sigmoid(channel_attention)
         channel_attention = F.sigmoid(channel_attention)
-        # channel_attention = self.activation(channel_attention)
         
         # Apply the channel attention: Element-wise multiplication (i.e., Hadamard product)   
         x = x * channel_attention
@@ -596,4 +595,5 @@ class CBAM(nn.Module):
         x = x + output  
         
         return x    
+
 
