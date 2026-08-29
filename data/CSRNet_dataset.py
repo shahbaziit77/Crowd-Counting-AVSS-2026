@@ -328,4 +328,4 @@ def data_path_gen_UCF_QNRF(paths):
             
     return ([train_img_paths, test_img_paths])      
  
-                       
+
