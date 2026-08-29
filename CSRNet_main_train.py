@@ -82,7 +82,6 @@ weight_decay = 5*1e-4
 lambda_mse = 1.0
 lambda_count = 0.1
 lambda_ssim = 0.01   
-lambda_dm = 1.0
 
 epochs = 400
 warmup_ratio = 0.05      # 5% warmup (use 0.10 for 10%)      
@@ -237,18 +236,17 @@ print(f"================ FLOPs and GFLOPs Computations ========================\
 
 input_tensor = torch.randn(1, 3, 256, 256).type(torch.FloatTensor).cuda()
 
-
 flops = count_flops(model, input_tensor)
 gflops = flops / 1e9
 
 print(f"FLOPs: {flops:.4f}, GFLOPs: {gflops:.4f}\t")   
 
 
-# # Computation of Params (M) and GFLOPs
-# with torch.cuda.device(0):
-#     macs, params = cps(model, (3, 256, 256), as_strings=True, print_per_layer_stat=True, verbose=True)   
-#     print('{:<30} {:<8}'.format('Computational Complexity: ', macs))
-#     print('{:<30} {:<8}'.format('No. of parameters: ', params)) 
+# Computation of Params (M) and GFLOPs
+with torch.cuda.device(0):
+     macs, params = cps(model, (3, 256, 256), as_strings=True, print_per_layer_stat=True, verbose=True)   
+     print('{:<30} {:<8}'.format('Computational Complexity: ', macs))
+     print('{:<30} {:<8}'.format('No. of parameters: ', params)) 
 # exit()      
 
 
@@ -280,10 +278,7 @@ test_loader = DataLoader(dataset=test_set, batch_size=batch_size_test, shuffle=F
 
 
 # Create a folder to save the checkpoints
-checkpoints = '/home/pguha5/Shahbaz/Yogesh_Shahbaz_Crowd_Counting/Journal_2025/\
-ShuffMob_CrowdNet/Ablation_Exp10_Backbone_FRM_PFFM_BFLOAT_inference_AVSS_2026/\
-Github_PaperID_38_AVSS_2026/weights/\
-training01_256x256_val_256x256/saved_model'    
+checkpoints = '/Path/to/your/checkpoints ... /weights/training01_EfficientNet_B0_256x256_val_256x256/saved_model'    
 
 # os.makedirs(checkpoints, exist_ok=True)
 
@@ -443,10 +438,6 @@ criterion = CrowdLoss(
 optimizer = optim.Adam(model.parameters(), lr=initial_lr, weight_decay=weight_decay)
 #optimizer = optim.AdamW(model.parameters(), lr=initial_lr, weight_decay=weight_decay)    
 #optimizer = optim.SGD(model.parameters(), lr=initial_lr, momentum=momentum, weight_decay=weight_decay)  
-
-# Optimizer for model2
-# optimizer2 = torch.optim.Adam(model.model2.parameters(), lr=initial_lr, weight_decay=weight_decay)
-
 
 # LR sheduler
 # scheduler = optim.lr_scheduler.StepLR(optimizer, step_size=step_size, gamma=gamma)    
