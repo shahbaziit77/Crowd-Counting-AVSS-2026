@@ -50,8 +50,8 @@ from ptflops import get_model_complexity_info as cps
 #-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
    
 # Root of the ShanghaiTech/UCF-QNRF dataset
-root_SHT = '/home/pguha5/Shahbaz/ShanghaiTech_dataset_New2'      # ShanghaiTech
-root_UCF_QNRF = '/home/pguha5/Shahbaz/UCF-QNRF_dataset_New2'     # UCF-QNRF
+root_SHT = './dataset/ShanghaiTech_dataset'      # ShanghaiTech
+root_UCF_QNRF = './dataset/UCF-QNRF_dataset'     # UCF-QNRF
 
 data_path = os.path.join(root_SHT, 'part_A_final')     # ShanghaiTech Part_A (SHT_A)
 # data_path = root_UCF_QNRF                              # UCF-QNRF
@@ -278,7 +278,7 @@ test_loader = DataLoader(dataset=test_set, batch_size=batch_size_test, shuffle=F
 
 
 # Create a folder to save the checkpoints
-checkpoints = '/Path/to/your/checkpoints ... /weights/training01_EfficientNet_B0_256x256_val_256x256/saved_model'    
+checkpoints = './weights/training01_EfficientNet_B0_256x256_val_256x256/saved_model'    
 
 # os.makedirs(checkpoints, exist_ok=True)
 
@@ -638,3 +638,4 @@ exit()
 #     model, optimizer, scheduler, start_epoch, best_mae = load_checkpoint(
 #         model, optimizer, scheduler, checkpoint_path, device    
 #     )   
+
