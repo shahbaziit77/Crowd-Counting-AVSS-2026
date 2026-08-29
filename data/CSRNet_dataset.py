@@ -44,12 +44,11 @@ class CrowdCountingDataset2(Dataset):
     
 # Data loading: Create a function for loading the data
 def load_data2(img_path):   
-    # gt_path = img_path.replace('.jpg', '.h5').replace('images', 'ground-truth/GT_h5_GAK')            # ShanghaiTech Part_A (SHT_A)
-    # gt_path = img_path.replace('.jpg', '.h5').replace('images', 'ground-truth/GT_h5_FGK_sigma_15')   # ShanghaiTech Part_B (SHT_B)  
-    # gt_path = img_path.replace('.jpg', '.h5').replace('images', 'ground_truth/GT_h5_GAK')            # UCF_CC_50
-    gt_path = img_path.replace('.jpg', '.h5').replace('images', 'ground_truth/GT_h5_FGK_sigma_4')    # UCF-QNRF   
+    gt_path = img_path.replace('.jpg', '.h5').replace('images', 'ground-truth/GT_h5_GAK')            # Testing: ShanghaiTech Part_A (SHT_A)
+    # gt_path = img_path.replace('.jpg', '.h5').replace('images', 'ground-truth/GT_h5_FGK_sigma_15')   # Testing: ShanghaiTech Part_B (SHT_B)  
+    # gt_path = img_path.replace('.jpg', '.h5').replace('images', 'ground_truth/GT_h5_GAK')            # Testing: UCF_CC_50
+    # gt_path = img_path.replace('.jpg', '.h5').replace('images', 'ground_truth/GT_h5_FGK_sigma_4')    # Testing: UCF-QNRF   
 
-    
     # Load the image
     #img = Image.open(img_path).convert('RGB')
     img = np.array(Image.open(img_path).convert('RGB')) 
@@ -94,7 +93,8 @@ def load_data2(img_path):
 class CrowdCountingDataset_v3(Dataset):
     def __init__(self, root_dir, split='train', train=True, transform=None):
         self.image_dir = os.path.join(root_dir, split, 'images')
-        self.target_dir = os.path.join(root_dir, split, 'ground-truth/GT_h5_GAK')
+        self.target_dir = os.path.join(root_dir, split, 'ground-truth/GT_h5_GAK')             # Training: ShanghaiTech Part_A (SHT_A) [split='train_data', train=True]
+        # self.target_dir = os.path.join(root_dir, split, 'ground_truth/GT_h5_FGK_sigma_15')    # Training: UCF-QNRF [split='train', train=True]
 
         self.image_paths = sorted([f for f in os.listdir(self.image_dir) if f.endswith('.jpg')])
         self.target_paths = sorted([f for f in os.listdir(self.target_dir) if f.endswith('.h5')])
@@ -162,7 +162,8 @@ class CrowdCountingDataset_v3(Dataset):
 class CrowdCountingDataset_v3_test(Dataset):
     def __init__(self, root_dir, split='train', train=True, transform=None):
         self.image_dir = os.path.join(root_dir, split, 'images')
-        self.target_dir = os.path.join(root_dir, split, 'ground-truth/GT_h5_GAK')
+        self.target_dir = os.path.join(root_dir, split, 'ground-truth/GT_h5_GAK')             # Validation: ShanghaiTech Part_A (SHT_A) [split='test_data', train=False]
+        # self.target_dir = os.path.join(root_dir, split, 'ground_truth/GT_h5_FGK_sigma_4')     # Validation: UCF-QNRF [split='test', train=False]
 
         self.image_paths = sorted([f for f in os.listdir(self.image_dir) if f.endswith('.jpg')])
         self.target_paths = sorted([f for f in os.listdir(self.target_dir) if f.endswith('.h5')])
