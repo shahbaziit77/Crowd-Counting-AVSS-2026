@@ -48,8 +48,8 @@ print(device)
 
 # Define the root of dataset                       
 root_SHT = './dataset/ShanghaiTech_dataset'     # ShanghaiTech                       
-root_UCF_CC_50 = '/Path/to/UCF_CC_50/dataset/UCF_CC_50_dataset'     # UCF_CC_50
-root_UCF_QNRF = '/Path/to/UCF-QNRF/dataset/UCF-QNRF_dataset'        # UCF_QNRF
+root_UCF_CC_50 = './dataset/UCF_CC_50_dataset'     # UCF_CC_50
+root_UCF_QNRF = './dataset/UCF-QNRF_dataset'        # UCF_QNRF
 
 data_path_SHT = data_path_gen_SHT(root_SHT)                    # ShanghaiTech 
 data_path_UCF_CC_50 = data_path_gen_UCF_CC_50(root_UCF_CC_50)  # UCF_CC_50
@@ -87,16 +87,11 @@ model = model.cuda()
 #---------------------------------------
 # Step 1: Load checkpoint1 → model1
 #---------------------------------------
-checkpoint1_path = '/home/pguha5/Shahbaz/Yogesh_Shahbaz_Crowd_Counting/Journal_2025/ShuffMob_CrowdNet/\
-Ablation_Exp10_Backbone_FRM_PFFM_BFLOAT_inference_AVSS_2026/\
-Ablation_ExpA6_EfficientNet_B0_CBAM_BiFPN_UCF-QNRF/trained_weights_EfficientNet_B0/\
+checkpoint1_path = './weights/trained_weights_EfficientNet_B0/\
 training01_256x256_val_256x256/saved_model/model_MAE_67.pth'
 
 # checkpoint1_path_MoblieNetV1_0_25 = (
-#     "/home/pguha5/Shahbaz/Yogesh_Shahbaz_Crowd_Counting/Journal_2025/"
-#     "ShuffMob_CrowdNet/"
-#     "Ablation_Exp10_Backbone_FRM_PFFM_BFLOAT_inference_AVSS_2026/"
-#     "Ablation_ExpA1_BB_CBAM_PANet/"
+#     "./weights/"
 #     " trained_weights_MobileNetV1_0_25/"
 #     "training01_256x256_val_256x256/"
 #     "saved_model/"
@@ -104,10 +99,7 @@ training01_256x256_val_256x256/saved_model/model_MAE_67.pth'
 # )
 
 # checkpoint1_path_MoblieNetV1_0_5 = (
-#     "/home/pguha5/Shahbaz/Yogesh_Shahbaz_Crowd_Counting/Journal_2025/"
-#     "ShuffMob_CrowdNet/"
-#     "Ablation_Exp10_Backbone_FRM_PFFM_BFLOAT_inference_AVSS_2026/"
-#     "Ablation_ExpA1_BB_CBAM_PANet/"
+#     "./weights/"
 #     " trained_weights_MobileNetV1_0_5/"
 #     "training01_256x256_val_256x256/"
 #     "saved_model/"
@@ -350,7 +342,7 @@ def resize_density_map(density_map_path, new_size):
 # --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 # Plot the image
-image_path = '/home/pguha5/Shahbaz/UCF-QNRF_dataset_New2/test/images/img_0295.jpg'  
+image_path = './dataset/UCF-QNRF_dataset/test/images/img_0295.jpg'  
 
 # Load the image
 # image = plt.imread(image_path)
@@ -367,7 +359,7 @@ plt.show()
 
 #=====================================================================================================
 
-image_path = '/home/pguha5/Shahbaz/UCF-QNRF_dataset_New2/test/images/img_0295.jpg'             
+image_path = './dataset/UCF-QNRF_dataset/test/images/img_0295.jpg'             
 # image = transform(Image.open(image_path).convert('RGB')).cuda() 
 image = np.asarray(Image.open(image_path).convert('RGB'))
 image_resized_np = cv2.resize(image, (256, 256), interpolation=cv2.INTER_CUBIC) 
@@ -377,7 +369,7 @@ print('Image size: ', image_resized_np.shape)
 
 #=====================================================================================================
 
-gt_density_map_path = '/home/pguha5/Shahbaz/UCF-QNRF_dataset_New2/test/ground_truth/GT_h5_FGK_sigma_4/img_0295.h5'    
+gt_density_map_path = './dataset/UCF-QNRF_dataset/test/ground_truth/GT_h5_FGK_sigma_4/img_0295.h5'    
 gt_file = h5py.File(gt_density_map_path, 'r')                       
 gt_density_map = np.asarray(gt_file['density']) 
 
