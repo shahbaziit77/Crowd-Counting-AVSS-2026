@@ -47,9 +47,9 @@ print(device)
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 # Define the root of dataset                       
-root_SHT = '/home/pguha5/Shahbaz/ShanghaiTech_dataset_New2'         # ShanghaiTech                       
-root_UCF_CC_50 = '/home/pguha5/Shahbaz/UCF_CC_50_dataset_New2'      # UCF_CC_50
-root_UCF_QNRF = '/home/pguha5/Shahbaz/UCF-QNRF_dataset_New2'        # UCF_QNRF
+root_SHT = './dataset/ShanghaiTech_dataset'     # ShanghaiTech                       
+root_UCF_CC_50 = '/Path/to/UCF_CC_50/dataset/UCF_CC_50_dataset'     # UCF_CC_50
+root_UCF_QNRF = '/Path/to/UCF-QNRF/dataset/UCF-QNRF_dataset'        # UCF_QNRF
 
 data_path_SHT = data_path_gen_SHT(root_SHT)                    # ShanghaiTech 
 data_path_UCF_CC_50 = data_path_gen_UCF_CC_50(root_UCF_CC_50)  # UCF_CC_50
@@ -60,8 +60,7 @@ data_path_UCF_QNRF = data_path_gen_UCF_QNRF(root_UCF_QNRF)     # UCF-QNRF
 # test_img_paths = data_path_UCF_CC_50      # UCF_CC_50
 test_img_paths = data_path_UCF_QNRF[1]    # UCF-QNRF   
 
-
-#test_img_paths = '/home/pguha5/Shahbaz/ShanghaiTech_dataset_New2/part_A_final'     
+#test_img_paths = '/Path/to/ShanghaiTech/dataset/ShanghaiTech_dataset/part_A_final'     
 
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
