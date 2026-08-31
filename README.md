@@ -1,4 +1,4 @@
 # Crowd-Counting-AVSS-2026
 # Lightweight Crowd Counting via Density Map Estimation
 # Official PyTorch implementation of our conference paper:
-# "Density Regression Refiner Framework with Pyramidal Feature Fusion Networks for Crowd Counting"
+# Density Regression Refiner Framework with Pyramidal Feature Fusion Networks for Crowd Counting
