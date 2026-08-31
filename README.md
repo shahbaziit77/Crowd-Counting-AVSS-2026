@@ -35,9 +35,7 @@ The implementation includes:
 Crowd counting aims to estimate the number of people in crowded scenes. Density-map-based approaches predict a spatial density distribution whose integral/sum corresponds to the estimated crowd count.  
 
 For an input image
-\(
-I \in \mathbb{R}^{H\times W\times3},
-\)
+$I \in \mathbb{R}^{H\times W\times3},$
 
 the proposed network learns a mapping
 
