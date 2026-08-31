@@ -48,28 +48,22 @@ The main objective of this project is to achieve a favorable **accuracy–effici
 
 The general processing pipeline is
 
-Input Crowd Image  
-$\downarrow$
-Pretrained Lightweight Backbone   
-        │
-        ├── Multi-level Feature Maps
-        │
-        ▼
-Attention / Feature Refinement Module
-        │
-        ▼
-Pyramidal Feature Fusion Module
-        │
-        ▼
-Lightweight Density Regression Head
-        │
-        ▼
-Estimated Density Map
-        │
-        ▼
+Input Image $I$  
+$\downarrow$  
+Pretrained Lightweight Backbone -- Multi-level Feature Maps  
+$\downarrow$  
+Feature Refiner Module (FRM): CBAM  
+$\downarrow$  
+Pyramidal Feature Fusion Module (PFFM): FPN/PANet/BiFPN
+$\downarrow$     
+Density Regressor (DR): point-wise convolution
+$\downarrow$       
+Estimated Density Map $\hat{D}$
+      
+      
 Sum over Density Map
-        │
-        ▼
+      
+      
 Estimated Crowd Count
 
 Depending on the experimental configuration, different lightweight backbones, attention mechanisms, and pyramidal feature-fusion modules can be selected.
