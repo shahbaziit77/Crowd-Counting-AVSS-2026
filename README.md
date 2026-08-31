@@ -16,8 +16,8 @@ This repository provides the source code for our lightweight crowd-counting fram
 
 The implementation includes:
 
-1) Dataset loading and preprocessing
-2) Ground-truth (GT) density map generation:<br>
+1. Dataset loading and preprocessing
+2. Ground-truth (GT) density map generation:<br>
    a. Geometry-Adaptive Kernel (GAK)<br>
    b. Fixed Gaussian Kernel (FGK)<br>
 4) Lightweight pretrained backbone loading
