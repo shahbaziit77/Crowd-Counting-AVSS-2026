@@ -40,7 +40,7 @@ $I \in \mathbb{R}^{h\times w\times3}$,
 the proposed density regression refiner framework learns a mapping
 $f_\theta\rightarrow\hat{D}$, where $\hat{D}=f_\theta(I)$ is the estimated density map.  
 
-The estimated crowd count is obtained as $\hat{c}=\sum_{x,y}\hat{D}(x,y).  
+The estimated crowd count is obtained as $\hat{c}=\sum_{x,y}\hat{D}(x,y)$.  
 
 The corresponding ground-truth count is $c=\sum_{x,y}D(x,y)$, where $D$ represents the ground-truth (GT) density map.
 
