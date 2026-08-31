@@ -37,11 +37,8 @@ Crowd counting aims to estimate the number of people in crowded scenes. Density-
 For an input image
 $I \in \mathbb{R}^{H\times W\times3},$
 
-the proposed network learns a mapping
-
-[
-f_\theta\rightarrow\hat{D},
-]
+the proposed density regression framework learns a mapping
+$f_\theta\rightarrow\hat{D},$
 
 where
 
