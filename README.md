@@ -54,10 +54,10 @@ Pretrained Lightweight Backbone -- Multi-level Feature Maps
 $\downarrow$  
 Feature Refiner Module (FRM): CBAM  
 $\downarrow$  
-Pyramidal Feature Fusion Module (PFFM): FPN/PANet/BiFPN
-$\downarrow$     
-Density Regressor (DR): point-wise convolution
-$\downarrow$       
+Pyramidal Feature Fusion Module (PFFM): FPN/PANet/BiFPN  
+$\downarrow$  
+Density Regressor (DR): Pointwise Convolution  
+$\downarrow$  
 Estimated Density Map $\hat{D}$
       
       
