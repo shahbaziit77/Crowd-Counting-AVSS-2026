@@ -8,7 +8,7 @@
 
 Shahbaz Ahmad, Prithwijit Guha  
 
-AVSS 2026  
+Adavanced Visual and Signal-Based Systems (AVSS) 2026  
 
 Department of Electronics and Electrical Engineering, Indian Institute of Technology Guwahati, India 
 
