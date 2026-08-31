@@ -61,8 +61,8 @@ Estimated Density Map $\hat{D}$
 Estimated Crowd Count $\hat{c} = \sum \hat{D}$ (Sum over Density Map)  
 Depending on the experimental configuration, different lightweight backbones, FRM: CBAM, and pyramidal feature fusion modules (PFFMs) can be selected.  
 The implementation of the principal architecture is contained in:  
-model/CSRnet.py  
+**model/CSRnet.py**  
 while reusable neural network modules and building blocks are defined in:  
-model/net.py
+**model/net.py**
 
 
