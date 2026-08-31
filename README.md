@@ -48,9 +48,7 @@ The main objective of this project is to achieve a favorable **accuracy–effici
 
 The general processing pipeline is
 
-Input Crowd Image
-        │
-        ▼
+Input Crowd Image \uparrow
 Pretrained Lightweight Backbone   
         │
         ├── Multi-level Feature Maps
