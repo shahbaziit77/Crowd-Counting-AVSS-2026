@@ -16,7 +16,7 @@ from image import *
 
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-# Density map generation: Create a function to generate the density maps using geometry-adaptive kernel (GAK) for the images
+# Density map generation: Create a function to generate the density maps using geometry-adaptive kernels (GAK) for the images
 def gaussian_filter_density(gt):                           
     print(gt.shape)                           
     density = np.zeros(gt.shape, dtype=np.float32)          
