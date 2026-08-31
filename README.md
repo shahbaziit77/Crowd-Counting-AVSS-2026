@@ -38,7 +38,7 @@ For an input image
 $I \in \mathbb{R}^{h\times w\times3}$,  
 
 the proposed density regression refiner framework learns a mapping
-$f_\theta\rightarrow\hat{D}$, where $\hat{D}=f_\theta(I)$ is the estimated density map.  
+$f_\theta\rightarrow\hat{D}$, where $\hat{D}=f_\theta(I)$, $D \in \mathbb{R}^{h/8\times w/8}$ is the estimated density map.  
 
 The estimated crowd count is obtained as $\hat{c}=\sum_{x,y}\hat{D}(x,y)$.  
 
