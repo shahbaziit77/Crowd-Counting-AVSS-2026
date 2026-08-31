@@ -23,7 +23,7 @@ The implementation includes:
 3. Lightweight pretrained backbone loading
 4. Attention modules
 5. Pyramidal feature fusion modules
-6. Density map regressor
+6. Density regressor (density regression head)
 7. Training and validation
 8. Model checkpointing
 9. Testing and visualization
