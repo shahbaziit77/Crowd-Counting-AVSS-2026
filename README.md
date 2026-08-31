@@ -18,20 +18,20 @@ The implementation includes:
 
 1) Dataset loading and preprocessing
 2) Ground-truth (GT) density map generation:
-  a. Geometry-Adaptive Kernel (GAK)
-  b. Fixed Gaussian Kernel (FGK)
-3) Lightweight pretrained backbone loading
-4) Attention modules
-5) Pyramidal feature fusion modules
-6) Density map regressor
-7) Training and validation
-8) Model checkpointing
-9) Testing and visualization
-10) MAE and MSE evaluation
-11) Parameter count computation
-12) GFLOPs computation
-13) Model size measurement
-14) Inference latency measurement
-15) FPS measurement
+   a. Geometry-Adaptive Kernel (GAK)
+   b. Fixed Gaussian Kernel (FGK)
+4) Lightweight pretrained backbone loading
+5) Attention modules
+6) Pyramidal feature fusion modules
+7) Density map regressor
+8) Training and validation
+9) Model checkpointing
+10) Testing and visualization
+11) MAE and MSE evaluation
+12) Parameter count computation
+13) GFLOPs computation
+14) Model size measurement
+15) Inference latency measurement
+16) FPS measurement
 
 
