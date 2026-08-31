@@ -12,7 +12,7 @@ Adavanced Visual and Signal-Based Systems (AVSS) 2026
 
 Department of Electronics and Electrical Engineering, Indian Institute of Technology Guwahati, India 
 
-This repository provides the source code for our lightweight crowd-counting framework: Density regression refiner framework based on density-map regression. The framework combines a pretrained lightweight backbone, attention-based feature refinement, pyramidal multi-scale feature fusion, and a lightweight density regression head to estimate crowd density maps and corresponding crowd counts.
+This repository provides the source code for our **lightweight crowd-counting framework: Density regression refiner framework** based on density-map regression. The framework combines a **pretrained lightweight backbone, attention-based feature refinement, pyramidal multi-scale feature fusion**, and a **lightweight density regression head** to estimate crowd density maps and corresponding crowd counts.
 
 The implementation includes:
 
