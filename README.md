@@ -34,6 +34,7 @@ The implementation includes:
 14. Inference latency measurement
 15. FPS measurement
 
-# 1. Overview
+# 1. Overview  
+Crowd counting aims to estimate the number of people in crowded scenes. Density-map-based approaches predict a spatial density distribution whose integral/sum corresponds to the estimated crowd count.
 
 
