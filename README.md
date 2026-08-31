@@ -18,8 +18,8 @@ The implementation includes:
 
 1) Dataset loading and preprocessing
 2) Ground-truth (GT) density map generation:
-  1. Geometry-Adaptive Kernel (GAK)
-  2. Fixed Gaussian Kernel (FGK)
+  a. Geometry-Adaptive Kernel (GAK)
+  b. Fixed Gaussian Kernel (FGK)
 3) Lightweight pretrained backbone loading
 4) Attention modules
 5) Pyramidal feature fusion modules
