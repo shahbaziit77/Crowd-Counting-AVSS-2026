@@ -35,18 +35,10 @@ The implementation includes:
 Crowd counting aims to estimate the number of people in crowded scenes. Density-map-based approaches predict a spatial density distribution whose integral/sum corresponds to the estimated crowd count.  
 
 For an input image
-$I \in \mathbb{R}^{h\times w\times3},$
+$I \in \mathbb{R}^{h\times w\times3}$,
 
-the proposed density regression framework learns a mapping
-$f_\theta\rightarrow\hat{D},$
-
-where
-
-[
-\hat{D}=f_\theta(I)
-]
-
-is the estimated density map.
+the proposed density regression refiner framework learns a mapping
+$f_\theta\rightarrow\hat{D}$, where $\hat{D}=f_\theta(I)$ is the estimated density map.
 
 The estimated crowd count is obtained as
 
