@@ -32,6 +32,42 @@ The implementation includes:
 15. FPS measurement
 
 # 1. Overview  
-Crowd counting aims to estimate the number of people in crowded scenes. Density-map-based approaches predict a spatial density distribution whose integral/sum corresponds to the estimated crowd count.
+Crowd counting aims to estimate the number of people in crowded scenes. Density-map-based approaches predict a spatial density distribution whose integral/sum corresponds to the estimated crowd count.  
+
+For an input image
+
+[
+I \in \mathbb{R}^{H\times W\times3},
+]
+
+the proposed network learns a mapping
+
+[
+f_\theta\rightarrow\hat{D},
+]
+
+where
+
+[
+\hat{D}=f_\theta(I)
+]
+
+is the estimated density map.
+
+The estimated crowd count is obtained as
+
+[
+\hat{C}=\sum_{x,y}\hat{D}(x,y).
+]
+
+The corresponding ground-truth count is
+
+[
+C=\sum_{x,y}D(x,y),
+]
+
+where (D) represents the ground-truth density map.
+
+The main objective of this project is to achieve a favorable accuracy–efficiency trade-off, making the model suitable not only for crowd-counting benchmarks but also for resource-constrained and edge-computing environments.
 
 
