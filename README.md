@@ -12,26 +12,26 @@ AVSS 2026
 
 Department of Electronics and Electrical Engineering, Indian Institute of Technology Guwahati, India 
 
-This repository provides the source code for our lightweight crowd-counting framework based on density-map regression. The framework combines a pretrained lightweight backbone, attention-based feature refinement, pyramidal multi-scale feature fusion, and a lightweight density regression head to estimate crowd density maps and corresponding crowd counts.
+This repository provides the source code for our lightweight crowd-counting framework: Density regression refiner framework based on density-map regression. The framework combines a pretrained lightweight backbone, attention-based feature refinement, pyramidal multi-scale feature fusion, and a lightweight density regression head to estimate crowd density maps and corresponding crowd counts.
 
 The implementation includes:
 
-Dataset loading and preprocessing
-Ground-truth density-map generation
-Geometry-Adaptive Kernel (GAK)
-Fixed Gaussian Kernel (FGK)
-Lightweight pretrained backbone loading
-Attention modules
-Pyramidal feature fusion modules
-Density-map regression
-Training and validation
-Model checkpointing
-Testing and visualization
-MAE and RMSE/MSE evaluation
-Parameter-count computation
-GFLOPs computation
-Model-size measurement
-Inference latency measurement
-FPS measurement
+1) Dataset loading and preprocessing
+2) Ground-truth (GT) density map generation:
+  1. Geometry-Adaptive Kernel (GAK)
+  2. Fixed Gaussian Kernel (FGK)
+3) Lightweight pretrained backbone loading
+4) Attention modules
+5) Pyramidal feature fusion modules
+6) Density map regressor
+7) Training and validation
+8) Model checkpointing
+9) Testing and visualization
+10) MAE and MSE evaluation
+11) Parameter count computation
+12) GFLOPs computation
+13) Model size measurement
+14) Inference latency measurement
+15) FPS measurement
 
 
