@@ -51,7 +51,7 @@ The general processing pipeline is
 Input Crowd Image
         │
         ▼
-Pretrained Lightweight Backbone
+Pretrained Lightweight Backbone   
         │
         ├── Multi-level Feature Maps
         │
