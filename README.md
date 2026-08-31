@@ -2,3 +2,7 @@
 # Lightweight Crowd Counting via Density Map Estimation
 # Official PyTorch implementation of our conference paper:
 # Density Regression Refiner Framework with Pyramidal Feature Fusion Networks for Crowd Counting
+Shahbaz Ahmad, <Co-author(s)>
+<Conference Name and Year>
+Department of Electronics and Electrical Engineering, Indian Institute of Technology Guwahati, India
+
