@@ -63,6 +63,27 @@ Depending on the experimental configuration, different lightweight backbones, FR
 The implementation of the principal architecture is contained in:  
 **model/CSRnet.py**  
 while reusable neural network modules and building blocks are defined in:  
-**model/net.py**
+**model/net.py**  
+
+# 3. Repository Structure
+Lightweight-Crowd-Counting/
+│
+├── data/
+│   ├── __init__.py
+│   └── CSRNet_dataset.py
+│
+├── model/
+│   ├── CSRnet.py
+│   └── net.py
+│
+├── gt_generation/
+│   └── density_map_generation.py
+│
+├── CSRNet_main_train.py
+├── CSRNet_test2.py
+│
+├── README.md
+├── requirements.txt
+└── LICENSE
 
 
