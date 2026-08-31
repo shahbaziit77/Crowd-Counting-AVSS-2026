@@ -16,7 +16,7 @@ from image import *
 
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-# Density map generation: Create a function to generate the density maps using geometry-adaptive kernel for the images
+# Density map generation: Create a function to generate the density maps using geometry-adaptive kernel (GAK) for the images
 def gaussian_filter_density(gt):                           
     print(gt.shape)                           
     density = np.zeros(gt.shape, dtype=np.float32)          
@@ -51,7 +51,7 @@ def gaussian_filter_density(gt):
 
 #=====================================================================================================================================================
 
-# Density map generation: Create a function to generate the density maps using fixed gaussian kernel for the images
+# Density map generation: Create a function to generate the density maps using fixed gaussian kernel (FGK) for the images
 def generate_density_map_fixed_gaussian_kernel(img, points, kernel_size=15, sigma=10.0):
     '''
     Generate ground truth (GT) density map for crowd counting.
