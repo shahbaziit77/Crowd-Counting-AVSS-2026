@@ -92,7 +92,17 @@ Lightweight Crowd Counting: Density Regression Refiner Framework/
 ### 📂 File Descriptions
 
 - **`data/`** — Dataset loading and preprocessing.
-  - **`CSRNet_dataset.py`** — Dataset class, image/density map loading, preprocessing, data augmentation, and dataset path generation.
+  - **`CSRNet_dataset.py`** — Dataset loading, dataset path generation, preprocessing, and preparation of image–density map pairs:
+                              Reading crowd images
+Reading corresponding ground-truth density maps
+Generating image and GT paths
+Train/validation/test data handling
+Image preprocessing
+Image resizing
+Density-map resizing
+Data augmentation
+PyTorch Dataset implementation
+Returning image/density-map pairs to the DataLoader
   - **`__init__.py`** — Initializes the `data` package.
 
 - **`model/`** — Network architectures and model components.
@@ -113,5 +123,7 @@ Lightweight Crowd Counting: Density Regression Refiner Framework/
 - **`README.md`** — Repository documentation.
 
 - **`LICENSE`** — Repository license.
+
+
 
 
