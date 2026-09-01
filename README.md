@@ -48,11 +48,11 @@ The main objective of this project is to achieve a favorable **accuracy–effici
 The general processing pipeline:  
 Input Image $I$  
 $\downarrow$  
-Pretrained Lightweight Backbone $\rightarrow$ Multi-level Feature Maps  
+Pretrained Lightweight Backbone $\rightarrow$ Multi-scale Features Representation  
 $\downarrow$  
 Feature Refiner Module (FRM): CBAM  
 $\downarrow$  
-Pyramidal Feature Fusion Module (PFFM): FPN/PANet/BiFPN  
+Pyramidal Feature Fusion Module (PFFM): FPN/PANet/BiFPN $\rightarrow$ Multi-scale Features Fusion    
 $\downarrow$  
 Density Regressor (DR): Pointwise Convolution  
 $\downarrow$  
