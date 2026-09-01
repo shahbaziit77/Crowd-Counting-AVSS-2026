@@ -195,21 +195,22 @@ dataset/
 ```
 
 ## 8. Dataset Preparation  
-Step 1: Download the dataset<br>
+**Step 1: Download the dataset**<br>
 Download the required crowd counting benchmark dataset from its official source.<br>
 For example:<br>
 1. ShanghaiTech.<br>
 2. UCF_CC_50.<br>
-3. UCF-QNRF.<br>
+3. UCF-QNRF.
+
 Please follow the licenses and terms of use provided by the respective dataset owners.
 
-Step 2: Organize images and annotations<br>
+**Step 2: Organize images and annotations**<br>
 Place images and corresponding annotation files in the appropriate directories.<br>
 For example:<br>
-
+```text
 ShanghaiTech/
 │
-├── part_A/
+├── part_A_final/
 │   ├── train_data/
 │   │   ├── images/
 │   │   └── ground_truth/
@@ -218,15 +219,19 @@ ShanghaiTech/
 │       ├── images/
 │       └── ground_truth/
 │
-└── part_B/
+└── part_B_final/
     ├── train_data/
+    |   ├── images/
+    │   └── ground_truth/
+    |
     └── test_data/
-Step 3 — Configure dataset paths
+        ├── images/
+        └── ground_truth/
+```
 
-Update the required paths in:
-
-data/CSRNet_dataset.py
-
+**Step 3: Configure dataset paths**<br>
+Update the required paths in:<br>
+data/CSRNet_dataset.py  
 according to the local dataset location.
 
 
