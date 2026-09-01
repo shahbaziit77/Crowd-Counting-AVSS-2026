@@ -341,74 +341,41 @@ MAE / MSE
 
 
 
-## 13. Complexity and Efficiency Evaluation
+## 13. Complexity and Efficiency Evaluation  
+In addition to counting accuracy, the framework evaluates computational efficiency.  
+The following metrics are supported in:<br>
+CSRNet_main_train.py  
 
-In addition to counting accuracy, the framework evaluates computational efficiency.
-
-The following metrics are supported in:
-
-CSRNet_main_train.py
-Parameters
-
+Parameters  
 The total number of learnable parameters is reported in millions:
+$Params(M)=\frac{\text{Number of Parameters}}{10^6}$.  
 
-[
-Params(M)=
-\frac{\text{Number of Parameters}}{10^6}.
-]
+GFLOPs  
+The computational cost is reported using giga floating-point operations:  
+$GFLOPs=\frac{FLOPs}{10^9}$.  
+Because GFLOPs depend on the input resolution, always report the resolution used for profiling.  
+Example:  
+Input resolution for complexity analysis: $768\times1024$.  
 
-GFLOPs
+Model Size  
+The trained model size is reported in megabytes: Model Size (MB).  
+This provides an additional indication of memory/storage requirements.  
 
-The computational cost is reported using giga floating-point operations:
-
-[
-GFLOPs=
-\frac{FLOPs}{10^9}.
-]
-
-Because GFLOPs depend on the input resolution, always report the resolution used for profiling.
-
-Example:
-
-Input resolution for complexity analysis: 768 × 1024
-Model Size
-
-The trained model size is reported in megabytes:
-
-Model Size (MB)
-
-This provides an additional indication of memory/storage requirements.
-
-Inference Latency
-
+Inference Latency  
 Latency measures the time required for one forward inference:
+$Latency = t_{end}-t_{start}$.  
+It is reported in milliseconds:  
+Latency (ms/image)  
+For GPU evaluation, synchronization should be performed before and after timing to obtain reliable measurements.  
 
-[
-Latency = t_{end}-t_{start}.
-]
-
-It is reported in milliseconds:
-
-Latency (ms/image)
-
-For GPU evaluation, synchronization should be performed before and after timing to obtain reliable measurements.
-
-Frames Per Second
-
+Frames Per Second (FPS)  
 Inference throughput can be calculated as
-
-[
-FPS=
-\frac{1000}
-{\text{Latency in milliseconds}}.
-]
-
-Higher FPS indicates faster inference.
+$FPS=\frac{1000}{\text{Latency in milliseconds}}$.  
+Higher FPS indicates faster inference.  
 
 For fair comparisons, the hardware, input resolution, batch size, precision, warm-up procedure, and timing protocol should be reported together with FPS/latency.
 
-## 14. Accuracy–Efficiency Trade-off
-
+## 14. Accuracy–Efficiency Trade-off  
 The lightweight architecture is designed to balance:
 
              Counting Accuracy
@@ -419,23 +386,21 @@ Low Complexity ◄────┼────► High Complexity
                     │
                     │
                     ▼
-             Deployment Cost
+             Deployment Cost  
+             
+The principal design objective is to obtain competitive counting accuracy while reducing:<br>  
+1. Number of parameters: Params (M)<br>  
+2. GFLOPs<br>
+3. Model size<br>
+4. Inference latency<br>
 
-The principal design objective is to obtain competitive counting accuracy while reducing:
+and improving:<br>  
+1. FPS<br>
+2. Memory efficiency<br>
+3. Deployment feasibility<br>
 
-Number of parameters
-GFLOPs
-Model size
-Inference latency
-
-and improving:
-
-FPS
-Memory efficiency
-Deployment feasibility
-19. Visualization
-
-CSRNet_test2.py can be used to visualize the qualitative crowd-counting results.
+## 15. Visualization  
+CSRNet_test2.py can be used to visualize the qualitative crowd-counting results.  
 
 A typical output contains:
 
@@ -444,16 +409,15 @@ A typical output contains:
 │                 │                  │        Map          │
 ├─────────────────┼──────────────────┼─────────────────────┤
 │ Crowd Scene     │ GT Count: C      │ Pred. Count: Ĉ      │
-└─────────────────┴──────────────────┴─────────────────────┘
+└─────────────────┴──────────────────┴─────────────────────┘  
 
-These visualizations help analyze:
-
-Localization of dense crowd regions
-Sparse vs. dense scenes
-Perspective variations
-Density-estimation quality
-Ground-truth vs. estimated crowd counts
-Failure cases
+These visualizations help analyze:<br>
+1. Localization of dense crowd regions.<br>
+2. Sparse vs. dense scenes.<br>
+3. Perspective variations.<br>
+4. Density estimation quality.<br>
+5. Ground truth vs. estimated crowd counts.<br>
+6. Failure cases.
 
 
 
