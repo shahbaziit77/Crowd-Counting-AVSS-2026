@@ -249,7 +249,7 @@ Local Distance Estimation
 $\downarrow$   
 Adaptive $\sigma_i$
 $\downarrow$   
-Gaussian Kernels
+Gaussian Kernels    
     
 GT Density Map
 Fixed Gaussian Kernel
