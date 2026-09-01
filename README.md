@@ -163,10 +163,8 @@ An important property of the generated density map is
 $\sum_{x,y}D(x,y)\approx N$, where $N$ is the number of annotated people.  
 Therefore, integrating/summing the density map produces the corresponding crowd count.  
 When resizing a density map, its values should be adjusted so that its total density remains approximately invariant.  
-For resizing:  
-$h\times w \rightarrow h'\times w'$  
-a count-preserving scaling can be written as  
-$D'=Resize(D)\frac{hw}{h'w'}$.  
+For resizing: $h\times w \rightarrow h'\times w'$,  
+a count-preserving scaling can be written as $D'=Resize(D)\frac{hw}{h'w'}$.  
 Thus, $\sum D'\approx\sum D$.
 
 
