@@ -268,14 +268,14 @@ Verify that the generated maps approximately satisfy: $\sum D \approx N$.
 Run the main training script:<br>
 python CSRNet_main_train.py  
 
-The complete training pipeline is  
+The complete training pipeline:  
 Training Images + GT Density Maps  
 $\downarrow$  
 Dataset  
 $\downarrow$  
 DataLoader  
 $\downarrow$  
-Lightweight CC Model  
+Lightweight Crowd Counting (CC) Model: Density Regression Refiner Framework  
 $\downarrow$  
 Estimated Density Map  
 $\downarrow$  
