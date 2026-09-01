@@ -521,6 +521,21 @@ PyTorch   : PyTorch 13.2<br>
 Python    : Python 3.10.6<br>
 OS        : Ubuntu 22.04 LTS  
 
-Inference latency and FPS depend strongly on the hardware and software environment. Therefore, efficiency results should be compared under equivalent conditions whenever possible.
+Inference latency and FPS depend strongly on the hardware and software environment. Therefore, efficiency results should be compared under equivalent conditions whenever possible.  
+
+## 22. Notes on Reproducibility  
+Results may vary slightly due to:<br>
+Random initialization<br>
+Dataset preprocessing<br>
+Random cropping (optional)<br>
+Data augmentation<br>
+CUDA/cuDNN implementation<br>
+GPU architecture<br>
+PyTorch version<br>
+Density map generation parameters<br>
+Numerical precision<br>
+Random seed  
+
+For improved reproducibility, explicitly fix random seeds for Python, NumPy, and PyTorch where applicable.
 
 
