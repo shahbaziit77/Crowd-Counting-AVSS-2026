@@ -322,20 +322,20 @@ Before running the script, configure:<br>
 4. Checkpoint path.<br>
 5. Output/visualization path.<br>
 
-The testing pipeline:
-Test Image
-$\downarrow$
-Load Trained Checkpoint
-$\downarrow$
-Forward Propagation
-$\downarrow$
-Estimated Density Map: Density Visualization
-$\downarrow$
-Sum Density Values
-$\downarrow$
-Estimated Count
-$\downarrow$
-Compare with GT Count
+The testing pipeline:  
+Test Image  
+$\downarrow$  
+Load Trained Checkpoint  
+$\downarrow$  
+Forward Propagation  
+$\downarrow$  
+Estimated Density Map: Density Visualization  
+$\downarrow$  
+Sum Density Values  
+$\downarrow$  
+Estimated Count  
+$\downarrow$  
+Compare with GT Count  
 $\downarrow$  
 MAE / MSE
 
