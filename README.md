@@ -115,8 +115,8 @@ Lightweight Crowd Counting: Density Regression Refiner Framework/
   - **`net.py`** — Contains reusable network components and supporting modules required by the main architecture.<br>
          Depending on the selected configuration, this file may contain implementations of:<br>
          1. Convolutional blocks.<br>
-         2. Depthwise convolutions<br>
-         3. Pointwise convolutions<br>
+         2. Depthwise convolutions.<br>
+         3. Pointwise convolutions.<br>
          4. Attention module: FRM (CBAM (channel attention, spatial attention)).<br>
          5. Feature pyramid modules: PFFMs (FPN, PANet, BiFPN).<br>
          6. Upsampling/downsampling layers.<br>
