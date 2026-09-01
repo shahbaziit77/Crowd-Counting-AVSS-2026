@@ -106,7 +106,16 @@ Lightweight Crowd Counting: Density Regression Refiner Framework/
   - **`__init__.py`** — Initializes the `data` directory as a Python package and enables importing dataset-related modules.
 
 - **`model/`** — Network architectures and model components.
-  - **`CSRnet.py`** — Main crowd counting architecture containing pretrained lightweight backbones, feature refiner module (FRM): CBAM, and pyramidal feature fusion modules (PFFMs): FPN/PANet/BiFPN.
+  - **`CSRnet.py`** — This file includes or integrates:<br>
+         1. Main crowd counting architecture containing pretrained lightweight backbones (multi-scale feature extraction).
+         2. Feature refiner module (FRM): CBAM (attention-based feature refinement).<br>
+         3. Pyramidal feature fusion modules (PFFMs): FPN/PANet/BiFPN (multi-scale/pyramidal feature fusion).<br>
+         4. Density regression head (density regressor (DR)).<br>
+         5. Final density map estimation.
+
+
+
+
   - **`net.py`** — Supporting neural network layers and modules.
 
 - **`gt_generation/`** — Ground truth (GT) density map generation.
