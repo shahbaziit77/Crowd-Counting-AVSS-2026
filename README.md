@@ -253,9 +253,9 @@ Gaussian Kernels
 $\downarrow$  
 GT Density Map  
 
-**Fixed Gaussian Kernel (FGK)**
+**Fixed Gaussian Kernel (FGK)**  
 Annotations  
-$\downarrow$ 
+$\downarrow$  
 Fixed $\sigma$  
 $\downarrow$  
 Gaussian Kernels  
