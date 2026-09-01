@@ -66,6 +66,7 @@ while reusable neural network modules and building blocks are defined in:
 **model/net.py**  
 
 # 3. Repository Structure
+'''
 Lightweight-Crowd-Counting/
 │
 ├── data/
@@ -85,5 +86,6 @@ Lightweight-Crowd-Counting/
 ├── README.md
 ├── requirements.txt
 └── LICENSE
+'''
 
 
