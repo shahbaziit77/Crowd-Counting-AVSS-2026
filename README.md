@@ -166,7 +166,7 @@ When resizing a density map, its values should be adjusted so that its total den
 For resizing:  
 $h\times w \rightarrow h'\times w'$  
 a count-preserving scaling can be written as  
-$D'=\operatorname{Resize}(D)\frac{hw}{h'w'}$.  
+$D'=Resize(D)\frac{hw}{h'w'}$.  
 Thus, $\sum D'\approx\sum D$.
 
 
