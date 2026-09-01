@@ -124,8 +124,8 @@ Lightweight Crowd Counting: Density Regression Refiner Framework/
 - **`gt_generation/`** — Ground truth (GT) density map generation.
   - **`density_map_generation.py`** — Generates ground truth (GT) crowd density maps from annotated head locations.<br>
          Two density-map generation strategies are supported:<br>
-         1. Geometry-Adaptive Kernel (GAK).<br>
-         2. Fixed Gaussian Kernel (FGK).<br>
+         1. Geometry-adaptive kernel (GAK).<br>
+         2. Fixed Gaussian kernel (FGK).<br>
          The generated density maps are used as regression targets during network training.
  
 - **`BBLiteV4.py`** — This script includes the pretrained BBLiteV4 lightweight backbone. 
@@ -143,7 +143,7 @@ Lightweight Crowd Counting: Density Regression Refiner Framework/
        9. Best model selection.<br>
        10. Parameter count: Params (M) calculation.<br>
        11. GFLOPs calculation.<br>
-       12. Model size calculation.
+       12. Model size calculation.<br>
        13. Density map quality: PSNR and SSIM calculation.<br>
        14. Inference latency and FPS measurement.<br>
        15. Training/validation performance monitoring.
