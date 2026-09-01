@@ -128,7 +128,7 @@ Lightweight Crowd Counting: Density Regression Refiner Framework/
          2. Fixed Gaussian Kernel (FGK).<br>
          The generated density maps are used as regression targets during network training.
  
-- **`BBLiteV4.py`** — This script includes pretrained BBLiteV4 lightweight backbone. 
+- **`BBLiteV4.py`** — This script includes the pretrained BBLiteV4 lightweight backbone. 
 
 - **`CSRNet_main_train.py`** — Main training and validation script.<br>
        The script contains the complete training pipeline, including:<br>
@@ -148,7 +148,13 @@ Lightweight Crowd Counting: Density Regression Refiner Framework/
        14. Inference latency and FPS measurement.<br>
        15. Training/validation performance monitoring.
 
-- **`CSRNet_test2.py`** — Testing and inference script for loading checkpoints and visualizing input images, ground truth (GT) density maps, and estimated density maps.
+- **`CSRNet_test2.py`** — Main testing and visualization script. It performs:<br>
+       1. Trained checkpoint loading.<br>
+       2. Test set inference.<br>
+       3. Crowd count estimation.<br>
+       4. MAE/MSE computation.<br>
+       5. Input image, ground truth (GT) density map, and estimated density map visualization.<br>
+       6. Ground truth (GT) count vs. estimated count comparison.
 
 - **`requirements.txt`** — Python package dependencies.
 
