@@ -493,6 +493,34 @@ Install PyTorch according to your CUDA configuration, and then install the remai
 pip install -r requirements.txt  
 
 Alternatively, install the principal dependencies manually:<br>
-pip install numpy scipy pandas matplotlib opencv-python h5py tqdm pillow
+pip install numpy scipy pandas matplotlib opencv-python h5py tqdm pillow  
+
+## 20. Requirements  
+A typical requirements.txt may contain:<br>
+torch<br>
+torchvision<br>
+numpy<br>
+scipy<br>
+opencv-python<br>
+pandas<br>
+matplotlib<br>
+h5py<br>
+Pillow<br>
+tqdm<br>
+ptflops  
+
+Please modify package versions according to the environment used to reproduce the experiments.  
+For maximum reproducibility, version-pinned dependencies are recommended.
+
+## 21. Hardware  
+Experiments were performed using:<br>
+GPU       : NVIDIA A100 80GB PCIe GPU
+CPU       : <CPU model, if relevant>
+CUDA      : CUDA version: 13.2
+PyTorch   : PyTorch 13.2
+Python    : Python 3.10.6
+OS        : Ubuntu 22.04 LTS
+
+Inference latency and FPS depend strongly on the hardware and software environment. Therefore, efficiency results should be compared under equivalent conditions whenever possible.
 
 
