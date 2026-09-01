@@ -514,12 +514,12 @@ For maximum reproducibility, version-pinned dependencies are recommended.
 
 ## 21. Hardware  
 Experiments were performed using:<br>
-GPU       : NVIDIA A100 80GB PCIe GPU
-CPU       : <CPU model, if relevant>
-CUDA      : CUDA version: 13.2
-PyTorch   : PyTorch 13.2
-Python    : Python 3.10.6
-OS        : Ubuntu 22.04 LTS
+GPU       : NVIDIA A100 80GB PCIe GPU<br>
+CPU       : <CPU model, if relevant><br>
+CUDA      : CUDA version: 13.2<br>
+PyTorch   : PyTorch 13.2<br>
+Python    : Python 3.10.6<br>
+OS        : Ubuntu 22.04 LTS  
 
 Inference latency and FPS depend strongly on the hardware and software environment. Therefore, efficiency results should be compared under equivalent conditions whenever possible.
 
