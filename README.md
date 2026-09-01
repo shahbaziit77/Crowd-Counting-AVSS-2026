@@ -323,7 +323,6 @@ Before running the script, configure:<br>
 5. Output/visualization path.<br>
 
 The testing pipeline:
-```text
 Test Image
 $\downarrow$
 Load Trained Checkpoint
@@ -339,7 +338,6 @@ $\downarrow$
 Compare with GT Count
 $\downarrow$  
 MAE / MSE
-```
 
 
 
