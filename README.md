@@ -170,7 +170,7 @@ Thus, $\sum D'\approx\sum D$.
 ## 5. Datasets  
 The framework can be adapted to commonly used crowd counting benchmark datasets such as:<br>  
 1. ShanghaiTech: ShanghaiTech Part_A (SHT_A), ShanghaiTech Part_B (SHT_B).<br>
-2. UCF_CC_50. <br>
+2. UCF_CC_50.<br>
 3. UCF-QNRF.
 
 Other point-annotation-based crowd-counting datasets.  
@@ -193,6 +193,41 @@ dataset/
     ├── images/
     └── ground_truth/
 ```
+
+## 8. Dataset Preparation  
+Step 1: Download the dataset<br>
+Download the required crowd counting benchmark dataset from its official source.<br>
+For example:<br>
+1. ShanghaiTech.<br>
+2. UCF_CC_50.<br>
+3. UCF-QNRF.<br>
+Please follow the licenses and terms of use provided by the respective dataset owners.
+
+Step 2: Organize images and annotations<br>
+Place images and corresponding annotation files in the appropriate directories.<br>
+For example:<br>
+
+ShanghaiTech/
+│
+├── part_A/
+│   ├── train_data/
+│   │   ├── images/
+│   │   └── ground_truth/
+│   │
+│   └── test_data/
+│       ├── images/
+│       └── ground_truth/
+│
+└── part_B/
+    ├── train_data/
+    └── test_data/
+Step 3 — Configure dataset paths
+
+Update the required paths in:
+
+data/CSRNet_dataset.py
+
+according to the local dataset location.
 
 
 
