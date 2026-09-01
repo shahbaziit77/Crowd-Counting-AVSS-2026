@@ -59,7 +59,7 @@ $\downarrow$
 Estimated Density Map $\hat{D}$  
 
 Estimated Crowd Count $\hat{c} = \sum \hat{D}$ (Sum over Density Map)  
-Depending on the experimental configuration, different lightweight backbones: MobileNetV1/V2/V3, ShuffleNetV2, EfficientNet-B0, BBLiteV4, FRM: CBAM, and pyramidal feature fusion modules (PFFMs): FPN, PANet, BiFPN can be selected.  
+Depending on the ablation experimental configuration, different lightweight backbones: MobileNetV1/V2/V3, ShuffleNetV2, EfficientNet-B0, BBLiteV4, FRM: CBAM, and pyramidal feature fusion modules (PFFMs): FPN, PANet, BiFPN, can be selected.  
 
 # 3. Repository Structure
 ```text
