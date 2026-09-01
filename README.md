@@ -116,8 +116,8 @@ Lightweight Crowd Counting: Density Regression Refiner Framework/
          1. Convolutional blocks.<br>
          2. Depthwise convolutions.<br>
          3. Pointwise convolutions.<br>
-         4. Attention module: FRM (CBAM (channel attention, spatial attention)).<br>
-         5. Feature pyramid modules: PFFMs (FPN, PANet, BiFPN).<br>
+         4. Attention module: CBAM (channel attention, spatial attention).<br>
+         5. Feature pyramid modules: FPN, PANet, BiFPN.<br>
          6. Upsampling/downsampling layers.<br>
          7. Density regression modules.
 
