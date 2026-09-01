@@ -232,7 +232,43 @@ ShanghaiTech/
 **Step 3: Configure dataset paths**<br>
 Update the required paths in:<br>
 data/CSRNet_dataset.py  
-according to the local dataset location.
+according to the local dataset location.  
+
+## 9. Generate Ground Truth Density Maps  
+Ground truth (GT) density maps should be generated before model training.  
+Run:<br>
+python gt_generation/density_map_generation.py  
+Select/configure the desired GT density generation method inside the script.  
+
+**Geometry-Adaptive Kernel (GAK)**  
+Annotations  
+$\downarrow$  
+k-Nearest Neighbors  
+$\downarrow$  
+Local Distance Estimation
+$\downarrow$   
+Adaptive $\sigma_i$
+$\downarrow$   
+Gaussian Kernels
+    
+GT Density Map
+Fixed Gaussian Kernel
+Annotations
+     │
+     ▼
+Fixed σ
+     │
+     ▼
+Gaussian Kernels
+     │
+     ▼
+GT Density Map
+
+Verify that the generated maps approximately satisfy
+
+[
+\sum D \approx N.
+]
 
 
 
