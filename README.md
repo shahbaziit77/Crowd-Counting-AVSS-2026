@@ -419,7 +419,48 @@ These visualizations help analyze:<br>
 3. Perspective variations.<br>
 4. Density estimation quality.<br>
 5. Ground truth vs. estimated crowd counts.<br>
-6. Failure cases.
+
+## 16. Reproducibility Workflow  
+The recommended end-to-end workflow:  
+STEP 1: Download Crowd-Counting Dataset  
+$\downarrow$  
+STEP 2: Prepare Images + Point Annotations  
+$\downarrow$  
+STEP 3: Generate GT Density Maps<br> 
+density_map_generation.py  
+$\downarrow$  
+STEP 4: Configure Dataset Paths<br>  
+data/CSRNet_dataset.py  
+$\downarrow$  
+STEP 5:Configure Network<br>
+model/CSRnet.py<br>
+model/net.py  
+$\downarrow$  
+STEP 6: Train + Validate<br>
+CSRNet_main_train.py  
+$\downarrow$       
+STEP 7: Save Best Checkpoint  
+$\downarrow$        
+STEP 8: Test<br>
+CSRNet_test2.py  
+$\downarrow$  
+STEP 9: Compute MAE / RMSE  
+$\downarrow$  
+STEP 10: Visualize Density Maps  
+$\downarrow$  
+STEP 11: Report Params / GFLOPs / Model Size / Latency / FPS  
+
+## 17. Example Commands
+Generate density maps<br>
+python gt_generation/density_map_generation.py  
+
+Train<br>
+python CSRNet_main_train.py  
+
+Test<br>
+python CSRNet_test2.py
+
+7. Failure cases.
 
 
 
