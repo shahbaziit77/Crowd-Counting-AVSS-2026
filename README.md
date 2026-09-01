@@ -4,7 +4,7 @@
 
 **Official PyTorch implementation of our conference paper:**  
 
-**Density Regression Refiner Framework with Pyramidal Feature Fusion Networks for Crowd Counting**  
+**A Density Regression Refiner Framework with Pyramidal Feature Fusion Networks for Crowd Counting**  
 Shahbaz Ahmad, Prithwijit Guha  
 Adavanced Visual and Signal-Based Systems (AVSS) 2026  
 Department of Electronics and Electrical Engineering, Indian Institute of Technology Guwahati, India 
@@ -536,6 +536,99 @@ Density map generation parameters<br>
 Numerical precision<br>
 Random seed  
 
-For improved reproducibility, explicitly fix random seeds for Python, NumPy, and PyTorch where applicable.
+For improved reproducibility, explicitly fix random seeds for Python, NumPy, and PyTorch where applicable.  
+
+## 23. Citation  
+If you use this repository, model, or implementation in your research, please cite our paper:<br>
+@inproceedings{ahmad2026lightweight,
+  title     = {A Density Regression Refiner Framework with Pyramidal Feature Fusion Networks for Crowd Counting},
+  author    = {Ahmad, Shahbaz and Guha, Prithwijit},
+  booktitle = {22nd International Conference on Adavanced Visual and Signal-Based Systems (AVSS)},
+  year      = {2026},
+  pages     = {<Pages>},
+  doi       = {<DOI>}
+}
+
+Please replace this entry with the official bibliographic information after publication.
+
+## 24. Paper
+
+Paper:
+<Official Paper/DOI Link>
+
+Conference:
+<Conference Website>
+
+Code:
+<GitHub Repository Link>
+
+## 25. License  
+This repository is released under the <LICENSE NAME> License.
+
+Please see
+
+LICENSE
+
+for additional information.
+
+The external datasets and pretrained backbone weights used by this project remain subject to their respective licenses and terms of use.
+
+## 25. Acknowledgements  
+We acknowledge the authors and maintainers of the crowd counting datasets, pretrained backbone architectures, and open-source libraries used in this research.  
+This implementation is developed using PyTorch and related scientific Python libraries.  
+If code from an external repository has been adapted, its original authors and license should also be acknowledged here.
+
+## 26. Contact  
+For questions regarding the paper or implementation, please contact:<br>
+Shahbaz Ahmad<br>
+Department of Electronics and Electrical Engineering<br>
+Indian Institute of Technology Guwahati (IIT Guwahati)<br>
+Guwahati, Assam, India  
+
+Email: a.shahbaz@iitg.ac.in
+
+GitHub: https://github.com/shahbaziit77  
+
+## 27. Repository Summary  
+```text
+Lightweight Crowd Counting
+│
+├── Data Preparation
+│   └── CSRNet_dataset.py
+│
+├── Ground Truth Generation
+│   ├── Geometry-Adaptive Kernel (GAK)
+│   └── Fixed Gaussian Kernel (FGK)
+│
+├── Model
+│   ├── Lightweight Backbone
+│   ├── Attention Module
+│   ├── Pyramidal Feature Fusion
+│   └── Density Regression
+│
+├── Training
+│   ├── Train
+│   ├── Validation
+│   ├── Loss
+│   ├── Optimizer
+│   ├── LR Scheduler
+│   └── Checkpoint Saving
+│
+├── Complexity
+│   ├── Parameters (M)
+│   ├── GFLOPs
+│   ├── Model Size (MB)
+│   ├── Latency (ms)
+│   └── FPS
+│
+└── Testing
+    ├── Checkpoint Loading
+    ├── Crowd Count Estimation
+    ├── MAE / RMSE
+    ├── GT Density Map
+    └── Estimated Density Map
+
+## Disclaimer
+This repository is intended primarily for academic research and reproducibility of the associated conference paper. Dataset licenses, pretrained model licenses, and third-party software licenses should be respected separately.
 
 
