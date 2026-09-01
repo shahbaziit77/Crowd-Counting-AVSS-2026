@@ -107,7 +107,7 @@ Lightweight Crowd Counting: Density Regression Refiner Framework/
 
 - **`model/`** — Network architectures and model components.
   - **`CSRnet.py`** — This file includes or integrates:<br>
-         1. Main crowd counting architecture containing pretrained lightweight backbones (multi-scale feature extraction).
+         1. Main crowd counting architecture containing pretrained lightweight backbones (multi-scale feature extraction).<br>
          2. Feature refiner module (FRM): CBAM (attention-based feature refinement).<br>
          3. Pyramidal feature fusion modules (PFFMs): FPN/PANet/BiFPN (multi-scale/pyramidal feature fusion).<br>
          4. Density regression head (density regressor (DR)).<br>
