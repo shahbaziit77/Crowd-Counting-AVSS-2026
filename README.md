@@ -432,7 +432,7 @@ $\downarrow$
 STEP 4: Configure Dataset Paths<br>  
 data/CSRNet_dataset.py  
 $\downarrow$  
-STEP 5:Configure Network<br>
+STEP 5: Configure Network<br>
 model/CSRnet.py<br>
 model/net.py  
 $\downarrow$  
@@ -458,9 +458,42 @@ Train<br>
 python CSRNet_main_train.py  
 
 Test<br>
-python CSRNet_test2.py
+python CSRNet_test2.py  
 
-7. Failure cases.
+## 18. Environment  
+The implementation is based on Python and PyTorch.  
+Recommended environment:<br>
+Python >= 3.8<br>
+PyTorch<br>
+torchvision<br>
+NumPy<br>
+SciPy<br>
+OpenCV<br>
+Pandas<br>
+Matplotlib<br>
+h5py<br>
+tqdm<br>
+Pillow  
 
+Additional packages may be required for model complexity computation.  
+Examples include:<br>
+ptflops<br>
+thop  
+depending on the implementation used in CSRNet_main_train.py.
+
+## 19. Installation  
+Clone the repository:<br>
+git clone https://github.com/shahbaziit77/Crowd-Counting-AVSS-2026.git
+cd Crowd-Counting-AVSS-2026  
+
+Create a virtual environment if desired:<br>
+python -m venv crowd_counting_env<br>
+source crowd_counting_env/bin/activate  
+
+Install PyTorch according to your CUDA configuration, and then install the remaining dependencies:<br>
+pip install -r requirements.txt  
+
+Alternatively, install the principal dependencies manually:<br>
+pip install numpy scipy pandas matplotlib opencv-python h5py tqdm pillow
 
 
