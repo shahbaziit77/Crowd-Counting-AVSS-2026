@@ -67,7 +67,7 @@ while reusable neural network modules and building blocks are defined in:
 
 # 3. Repository Structure
 ```text
-Lightweight-Crowd-Counting/
+Lightweight Crowd Counting: Density Regression Refiner Framework/
 │
 ├── data/
 │   ├── __init__.py
@@ -90,19 +90,19 @@ Lightweight-Crowd-Counting/
 ### 📂 File Descriptions
 
 - **`data/`** — Dataset loading and preprocessing.
-  - **`CSRNet_dataset.py`** — Dataset class, image/density-map loading, preprocessing, and dataset path generation.
+  - **`CSRNet_dataset.py`** — Dataset class, image/density map loading, preprocessing, data augmentation, and dataset path generation.
   - **`__init__.py`** — Initializes the `data` package.
 
 - **`model/`** — Network architectures and model components.
-  - **`CSRnet.py`** — Main crowd-counting architecture containing pretrained lightweight backbones, attention modules, and pyramidal feature-fusion modules.
-  - **`net.py`** — Supporting neural-network layers and modules.
+  - **`CSRnet.py`** — Main crowd counting architecture containing pretrained lightweight backbones, feature refiner module (FRM): CBAM, and pyramidal feature fusion modules (PFFMs): FPN/PANet/BiFPN.
+  - **`net.py`** — Supporting neural network layers and modules.
 
-- **`gt_generation/`** — Ground-truth density-map generation.
+- **`gt_generation/`** — Ground truth (GT) density map generation.
   - **`density_map_generation.py`** — Generates density maps using Geometry-Adaptive Kernel (GAK) and Fixed Gaussian Kernel (FGK) approaches.
 
-- **`CSRNet_main_train.py`** — Main training and validation script, including optimizer, learning-rate scheduling, loss computation, checkpoint saving, Params, GFLOPs, latency, FPS, and model-size evaluation.
+- **`CSRNet_main_train.py`** — Main training and validation script, including optimizer, learning rate (LR) scheduling, loss computation, checkpoints saving, Params (M), GFLOPs, latency, FPS, and model size evaluation.
 
-- **`CSRNet_test2.py`** — Testing and inference script for loading checkpoints and visualizing input images, ground-truth density maps, and estimated density maps.
+- **`CSRNet_test2.py`** — Testing and inference script for loading checkpoints and visualizing input images, ground truth (GT) density maps, and estimated density maps.
 
 - **`requirements.txt`** — Python package dependencies.
 
