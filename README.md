@@ -293,26 +293,22 @@ Validation
 $\downarrow$  
 Best Checkpoint Saving  
 
-## 11. Model Checkpoints
-
-During training, model checkpoints are saved by:
-
-CSRNet_main_train.py
+## 11. Model Checkpoints  
+During training, model checkpoints are saved by:<br>
+CSRNet_main_train.py  
 
 A typical checkpoint directory may be
-
-checkpoints/
+```text
+weights/training01_EfficientNet_B0_256x256_val_256x256/saved_model/
 │
-├── best_model.pth
-├── latest_model.pth
+├── model_checkpoint.pth
+├── model_MAE_<best_MAE_epoch_number.pth (for e.g., model_MAE_114.pth)
 └── ...
+```
 
-The best checkpoint can be selected using validation performance.
-
-Example criterion:
-
-Lowest validation MAE
-
+The best checkpoint can be selected using validation performance.  
+Example criterion:  
+Lowest validation MAE  
 or another criterion specified in the training script.
 
 
