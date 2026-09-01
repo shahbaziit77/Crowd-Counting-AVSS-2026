@@ -344,29 +344,29 @@ In addition to counting accuracy, the framework evaluates computational efficien
 The following metrics are supported in:<br>
 CSRNet_main_train.py  
 
-Parameters  
+**Parameters**  
 The total number of learnable parameters is reported in millions:
 $Params(M)=\frac{\text{Number of Parameters}}{10^6}$.  
 
-GFLOPs  
-The computational cost is reported using giga floating-point operations:  
+**GFLOPs**  
+The computational cost is reported using **giga floating-point operations**:  
 $GFLOPs=\frac{FLOPs}{10^9}$.  
 Because GFLOPs depend on the input resolution, always report the resolution used for profiling.  
 Example:  
 Input resolution for complexity analysis: $768\times1024$.  
 
-Model Size  
+**Model Size**  
 The trained model size is reported in megabytes: Model Size (MB).  
 This provides an additional indication of memory/storage requirements.  
 
-Inference Latency  
+**Inference Latency**  
 Latency measures the time required for one forward inference:
 $Latency = t_{end}-t_{start}$.  
 It is reported in milliseconds:  
 Latency (ms/image)  
 For GPU evaluation, synchronization should be performed before and after timing to obtain reliable measurements.  
 
-Frames Per Second (FPS)  
+**Frames Per Second (FPS)**  
 Inference throughput can be calculated as
 $FPS=\frac{1000}{\text{Latency in milliseconds}}$.  
 Higher FPS indicates faster inference.  
