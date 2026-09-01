@@ -48,7 +48,7 @@ The main objective of this project is to achieve a favorable **accuracy–effici
 The general architecture pipeline:  
 Input Image $I$  
 $\downarrow$  
-Pretrained Lightweight Backbone $\rightarrow$ Multi-scale Features Representation  
+Pretrained Lightweight Backbone $\rightarrow$ Multi-scale Feature Extraction  
 $\downarrow$  
 Feature Refiner Module (FRM): CBAM  
 $\downarrow$  
@@ -93,16 +93,16 @@ Lightweight Crowd Counting: Density Regression Refiner Framework/
 
 - **`data/`** — Dataset loading and preprocessing.
   - **`CSRNet_dataset.py`** — Dataset loading, dataset path generation, preprocessing, and preparation of image–density map pairs:<br>
-                              1. Reading crowd images.<br>
-                              2. Reading corresponding ground-truth density maps.<br>
-                              3. Generating image and GT paths.<br>
-                              4. Train/validation/test data handling.<br>
-                              5. Image preprocessing.<br>
-                              6. Image resizing.<br>
-                              7. Density map resizing and count-preserving scaling.<br>
-                              8. Data augmentation.<br>
-                              9. PyTorch Dataset implementation.<br>
-                              10. Returning image/density-map pairs to the DataLoader.<br>
+         1. Reading crowd images.<br>
+         2. Reading corresponding ground-truth density maps.<br>
+         3. Generating image and GT paths.<br>
+         4. Train/validation/test data handling.<br>
+         5. Image preprocessing.<br>
+         6. Image resizing.<br>
+         7. Density map resizing and count-preserving scaling.<br>
+         8. Data augmentation.<br>
+         9. PyTorch Dataset implementation.<br>
+         10. Returning image/density-map pairs to the DataLoader.<br>
   - **`__init__.py`** — Initializes the `data` directory as a Python package and enables importing dataset-related modules.
 
 - **`model/`** — Network architectures and model components.
@@ -112,11 +112,15 @@ Lightweight Crowd Counting: Density Regression Refiner Framework/
          3. Pyramidal feature fusion modules (PFFMs): FPN/PANet/BiFPN (multi-scale/pyramidal feature fusion).<br>
          4. Density regression head (density regressor (DR)).<br>
          5. Final density map estimation.
-
-
-
-
-  - **`net.py`** — Supporting neural network layers and modules.
+  - **`net.py`** — Contains reusable network components and supporting modules required by the main architecture.<br>
+         Depending on the selected configuration, this file may contain implementations of:<br>
+         1. Convolutional blocks.<br>
+         2. Depthwise convolutions<br>
+         3. Pointwise convolutions<br>
+         4. Attention module: FRM (CBAM (channel attention, spatial attention)).<br>
+         5. Feature pyramid modules: PFFMs (FPN, PANet, BiFPN).<br>
+         6. Upsampling/downsampling layers.<br>
+         7. Density regression modules.
 
 - **`gt_generation/`** — Ground truth (GT) density map generation.
   - **`density_map_generation.py`** — Generates density maps using Geometry-Adaptive Kernel (GAK) and Fixed Gaussian Kernel (FGK) approaches.
