@@ -54,7 +54,7 @@ Feature Refiner Module (FRM): CBAM
 $\downarrow$  
 Pyramidal Feature Fusion Module (PFFM): FPN/PANet/BiFPN $\rightarrow$ Multi-scale Feature Fusion    
 $\downarrow$  
-Density Regressor (DR): Pointwise Convolution ($Conv 1\times1 $)  
+Density Regressor (DR): Pointwise Convolution ($Conv 1\times1 $)    
 $\downarrow$  
 Estimated Density Map $\hat{D}$  
 
