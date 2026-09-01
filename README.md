@@ -264,48 +264,34 @@ GT Density Map
 
 Verify that the generated maps approximately satisfy: $\sum D \approx N$.  
 
-## 10. Training
+## 10. Training  
+Run the main training script:<br>
+python CSRNet_main_train.py  
 
-Run the main training script:
-
-python CSRNet_main_train.py
-
-The complete training pipeline is
-
-Training Images + GT Density Maps
-                │
-                ▼
-             Dataset
-                │
-                ▼
-            DataLoader
-                │
-                ▼
-       Lightweight CC Model
-                │
-                ▼
-      Estimated Density Map
-                │
-                ▼
-          Loss Function
-                │
-                ▼
-           Backpropagation
-                │
-                ▼
-             Optimizer
-                │
-                ▼
-          LR Scheduler
-                │
-                ▼
-        Parameter Update
-                │
-                ▼
-            Validation
-                │
-                ▼
-      Best Checkpoint Saving
+The complete training pipeline is  
+Training Images + GT Density Maps  
+$\downarrow$  
+Dataset  
+$\downarrow$  
+DataLoader  
+$\downarrow$  
+Lightweight CC Model  
+$\downarrow$  
+Estimated Density Map  
+$\downarrow$  
+Loss Function  
+$\downarrow$  
+Backpropagation  
+$\downarrow$  
+Optimizer  
+$\downarrow$  
+LR Scheduler  
+$\downarrow$  
+Parameter Update  
+$\downarrow$  
+Validation  
+$\downarrow$  
+Best Checkpoint Saving
 
 
 
