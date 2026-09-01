@@ -540,13 +540,13 @@ For improved reproducibility, explicitly fix random seeds for Python, NumPy, and
 
 ## 23. Citation  
 If you use this repository, model, or implementation in your research, please cite our paper:<br>
-@inproceedings{ahmad2026lightweight,
-  title     = {A Density Regression Refiner Framework with Pyramidal Feature Fusion Networks for Crowd Counting},
-  author    = {Ahmad, Shahbaz and Guha, Prithwijit},
-  booktitle = {22nd International Conference on Adavanced Visual and Signal-Based Systems (AVSS)},
-  year      = {2026},
-  pages     = {<Pages>},
-  doi       = {<DOI>}
+@inproceedings{ahmad2026lightweight,<br>
+  title     = {A Density Regression Refiner Framework with Pyramidal Feature Fusion Networks for Crowd Counting},<br>
+  author    = {Ahmad, Shahbaz and Guha, Prithwijit},<br>
+  booktitle = {22nd International Conference on Adavanced Visual and Signal-Based Systems (AVSS)},<br>
+  year      = {2026},<br>
+  pages     = {<Pages>},<br>
+  doi       = {<DOI>}<br>
 }
 
 Please replace this entry with the official bibliographic information after publication.
@@ -624,7 +624,7 @@ Lightweight Crowd Counting
 └── Testing
     ├── Checkpoint Loading
     ├── Crowd Count Estimation
-    ├── MAE / RMSE
+    ├── MAE / MSE
     ├── GT Density Map
     └── Estimated Density Map
 ```
