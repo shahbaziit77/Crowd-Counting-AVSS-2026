@@ -291,7 +291,7 @@ Parameter Update
 $\downarrow$  
 Validation  
 $\downarrow$  
-Best Checkpoint Saving
+Best Checkpoint Saving  
 
 
 
