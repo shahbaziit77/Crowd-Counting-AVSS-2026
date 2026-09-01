@@ -245,10 +245,10 @@ Annotations
 $\downarrow$  
 k-Nearest Neighbors  
 $\downarrow$  
-Local Distance Estimation
-$\downarrow$   
-Adaptive $\sigma_i$
-$\downarrow$   
+Local Distance Estimation  
+$\downarrow$  
+Adaptive $\sigma_i$  
+$\downarrow$  
 Gaussian Kernels    
     
 GT Density Map
