@@ -337,7 +337,7 @@ $\downarrow$
 Estimated Count
 $\downarrow$
 Compare with GT Count
-$\downarrow$
+$\downarrow$  
 MAE / MSE
 
 
