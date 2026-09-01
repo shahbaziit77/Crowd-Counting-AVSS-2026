@@ -172,8 +172,9 @@ The framework can be adapted to commonly used crowd counting benchmark datasets 
 1. ShanghaiTech: ShanghaiTech Part_A (SHT_A), ShanghaiTech Part_B (SHT_B).<br>
 2. UCF_CC_50. <br>
 3. UCF-QNRF.
-Other point-annotation-based crowd-counting datasets.
-The exact dataset organization should be modified according to the path generation logic in:
+
+Other point-annotation-based crowd-counting datasets.  
+The exact dataset organization should be modified according to the path generation logic in:  
 data/CSRNet_dataset.py
 
 A typical dataset structure is
