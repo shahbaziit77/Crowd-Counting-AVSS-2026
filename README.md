@@ -483,7 +483,7 @@ depending on the implementation used in CSRNet_main_train.py.
 
 ## 19. Installation  
 Clone the repository:<br>
-git clone https://github.com/shahbaziit77/Crowd-Counting-AVSS-2026.git
+git clone https://github.com/shahbaziit77/Crowd-Counting-AVSS-2026.git<br>
 cd Crowd-Counting-AVSS-2026  
 
 Create a virtual environment if desired:<br>
