@@ -249,26 +249,20 @@ Local Distance Estimation
 $\downarrow$  
 Adaptive $\sigma_i$  
 $\downarrow$  
-Gaussian Kernels    
-    
-GT Density Map
-Fixed Gaussian Kernel
-Annotations
-     │
-     ▼
-Fixed σ
-     │
-     ▼
-Gaussian Kernels
-     │
-     ▼
-GT Density Map
+Gaussian Kernels  
+$\downarrow$  
+GT Density Map  
 
-Verify that the generated maps approximately satisfy
+**Fixed Gaussian Kernel (FGK)**
+Annotations  
+$\downarrow$ 
+Fixed $\sigma$  
+$\downarrow$  
+Gaussian Kernels  
+$\downarrow$  
+GT Density Map  
 
-[
-\sum D \approx N.
-]
+Verify that the generated maps approximately satisfy: $\sum D \approx N$.
 
 
 
