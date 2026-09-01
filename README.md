@@ -339,8 +339,6 @@ Compare with GT Count
 $\downarrow$  
 MAE / MSE  
 
-
-
 ## 13. Complexity and Efficiency Evaluation  
 In addition to counting accuracy, the framework evaluates computational efficiency.  
 The following metrics are supported in:<br>
@@ -377,6 +375,7 @@ For fair comparisons, the hardware, input resolution, batch size, precision, war
 
 ## 14. Accuracy–Efficiency Trade-off  
 The lightweight architecture is designed to balance:
+```text
 
              Counting Accuracy
                     ▲
@@ -386,7 +385,8 @@ Low Complexity ◄────┼────► High Complexity
                     │
                     │
                     ▼
-             Deployment Cost  
+             Deployment Cost
+``` 
              
 The principal design objective is to obtain competitive counting accuracy while reducing:<br>  
 1. Number of parameters: Params (M)<br>  
@@ -403,13 +403,14 @@ and improving:<br>
 CSRNet_test2.py can be used to visualize the qualitative crowd-counting results.  
 
 A typical output contains:
-
+```text
 ┌─────────────────┬──────────────────┬─────────────────────┐
 │   Input Image   │  GT Density Map  │ Estimated Density   │
 │                 │                  │        Map          │
 ├─────────────────┼──────────────────┼─────────────────────┤
 │ Crowd Scene     │ GT Count: C      │ Pred. Count: Ĉ      │
-└─────────────────┴──────────────────┴─────────────────────┘  
+└─────────────────┴──────────────────┴─────────────────────┘
+``` 
 
 These visualizations help analyze:<br>
 1. Localization of dense crowd regions.<br>
