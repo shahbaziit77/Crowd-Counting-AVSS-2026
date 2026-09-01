@@ -302,14 +302,43 @@ A typical checkpoint directory may be
 weights/training01_EfficientNet_B0_256x256_val_256x256/saved_model/
 │
 ├── model_checkpoint.pth
-├── model_MAE_<best_MAE_epoch_number.pth (for e.g., model_MAE_114.pth)
+├── model_MAE_<best_MAE_epoch_number>.pth (for e.g., model_MAE_114.pth)
 └── ...
 ```
 
 The best checkpoint can be selected using validation performance.  
 Example criterion:  
 Lowest validation MAE  
-or another criterion specified in the training script.
+or another criterion specified in the training script.  
+
+## 12. Testing  
+After training, evaluate the model using:<br>
+python CSRNet_test2.py  
+
+Before running the script, configure:<br>
+1. Test dataset path.<br>
+2. Ground truth (GT) density map path.<br>
+3. Model configuration.<br>
+4. Checkpoint path.<br>
+5. Output/visualization path.<br>
+
+The testing pipeline:
+```text
+Test Image
+$\downarrow$
+Load Trained Checkpoint
+$\downarrow$
+Forward Propagation
+$\downarrow$
+Estimated Density Map: Density Visualization
+$\downarrow$
+Sum Density Values
+$\downarrow$
+Estimated Count
+$\downarrow$
+Compare with GT Count
+$\downarrow$
+MAE / MSE
 
 
 
