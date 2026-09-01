@@ -443,7 +443,7 @@ $\downarrow$
 STEP 8: Test<br>
 CSRNet_test2.py  
 $\downarrow$  
-STEP 9: Compute MAE / RMSE  
+STEP 9: Compute MAE / MSE  
 $\downarrow$  
 STEP 10: Visualize Density Maps  
 $\downarrow$  
