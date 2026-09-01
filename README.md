@@ -413,7 +413,7 @@ A typical output contains:
 ``` 
 
 These visualizations help analyze:<br>
-1. Localization of dense crowd regions.<br>
+1. Localization of dense crowd regions.<br>   
 2. Sparse vs. dense scenes.<br>
 3. Perspective variations.<br>
 4. Density estimation quality.<br>
