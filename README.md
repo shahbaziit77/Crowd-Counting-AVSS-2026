@@ -337,7 +337,123 @@ Estimated Count
 $\downarrow$  
 Compare with GT Count  
 $\downarrow$  
-MAE / MSE
+MAE / MSE  
+
+
+
+## 13. Complexity and Efficiency Evaluation
+
+In addition to counting accuracy, the framework evaluates computational efficiency.
+
+The following metrics are supported in:
+
+CSRNet_main_train.py
+Parameters
+
+The total number of learnable parameters is reported in millions:
+
+[
+Params(M)=
+\frac{\text{Number of Parameters}}{10^6}.
+]
+
+GFLOPs
+
+The computational cost is reported using giga floating-point operations:
+
+[
+GFLOPs=
+\frac{FLOPs}{10^9}.
+]
+
+Because GFLOPs depend on the input resolution, always report the resolution used for profiling.
+
+Example:
+
+Input resolution for complexity analysis: 768 × 1024
+Model Size
+
+The trained model size is reported in megabytes:
+
+Model Size (MB)
+
+This provides an additional indication of memory/storage requirements.
+
+Inference Latency
+
+Latency measures the time required for one forward inference:
+
+[
+Latency = t_{end}-t_{start}.
+]
+
+It is reported in milliseconds:
+
+Latency (ms/image)
+
+For GPU evaluation, synchronization should be performed before and after timing to obtain reliable measurements.
+
+Frames Per Second
+
+Inference throughput can be calculated as
+
+[
+FPS=
+\frac{1000}
+{\text{Latency in milliseconds}}.
+]
+
+Higher FPS indicates faster inference.
+
+For fair comparisons, the hardware, input resolution, batch size, precision, warm-up procedure, and timing protocol should be reported together with FPS/latency.
+
+## 14. Accuracy–Efficiency Trade-off
+
+The lightweight architecture is designed to balance:
+
+             Counting Accuracy
+                    ▲
+                    │
+                    │
+Low Complexity ◄────┼────► High Complexity
+                    │
+                    │
+                    ▼
+             Deployment Cost
+
+The principal design objective is to obtain competitive counting accuracy while reducing:
+
+Number of parameters
+GFLOPs
+Model size
+Inference latency
+
+and improving:
+
+FPS
+Memory efficiency
+Deployment feasibility
+19. Visualization
+
+CSRNet_test2.py can be used to visualize the qualitative crowd-counting results.
+
+A typical output contains:
+
+┌─────────────────┬──────────────────┬─────────────────────┐
+│   Input Image   │  GT Density Map  │ Estimated Density   │
+│                 │                  │        Map          │
+├─────────────────┼──────────────────┼─────────────────────┤
+│ Crowd Scene     │ GT Count: C      │ Pred. Count: Ĉ      │
+└─────────────────┴──────────────────┴─────────────────────┘
+
+These visualizations help analyze:
+
+Localization of dense crowd regions
+Sparse vs. dense scenes
+Perspective variations
+Density-estimation quality
+Ground-truth vs. estimated crowd counts
+Failure cases
 
 
 
