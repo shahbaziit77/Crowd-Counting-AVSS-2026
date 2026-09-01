@@ -45,7 +45,7 @@ The corresponding ground-truth count is $c=\sum_{x,y}D(x,y)$, where $D$ represen
 The main objective of this project is to achieve a favorable **accuracy–efficiency trade-off**, making the model suitable not only for crowd counting benchmarks but also for resource-constrained and edge-computing environments.
 
 # 2. Network Architecture  
-The general architecture pipeline:  
+The general network architecture pipeline:  
 Input Image $I$  
 $\downarrow$  
 Pretrained Lightweight Backbone $\rightarrow$ Multi-scale Feature Extraction  
@@ -60,7 +60,7 @@ Estimated Density Map $\hat{D}$
 
 Estimated Crowd Count $\hat{c} = \sum \hat{D}$ (Sum over Density Map)  
 Depending on the experimental configuration, different lightweight backbones, FRM: CBAM, and pyramidal feature fusion modules (PFFMs) can be selected.  
-The implementation of the principal architecture is contained in:  
+The implementation of the network architecture is contained in:  
 **model/CSRnet.py**  
 while reusable neural network modules and building blocks are defined in:  
 **model/net.py**  
