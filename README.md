@@ -165,7 +165,39 @@ Therefore, integrating/summing the density map produces the corresponding crowd 
 When resizing a density map, its values should be adjusted so that its total density remains approximately invariant.  
 For resizing: $h\times w \rightarrow h'\times w'$,  
 a count-preserving scaling can be written as $D'=Resize(D)\frac{hw}{h'w'}$.  
-Thus, $\sum D'\approx\sum D$.
+Thus, $\sum D'\approx\sum D$.  
+
+## 5. Supported Datasets
+
+The framework can be adapted to commonly used crowd-counting datasets such as:
+
+ShanghaiTech Part A
+ShanghaiTech Part B
+UCF_CC_50
+UCF-QNRF
+NWPU-Crowd
+JHU-CROWD++
+Other point-annotation-based crowd-counting datasets
+
+The exact dataset organization should be modified according to the path-generation logic in:
+
+data/CSRNet_dataset.py
+
+A typical dataset structure is
+
+dataset/
+│
+├── train/
+│   ├── images/
+│   └── ground_truth/
+│
+├── val/
+│   ├── images/
+│   └── ground_truth/
+│
+└── test/
+    ├── images/
+    └── ground_truth/
 
 
 
