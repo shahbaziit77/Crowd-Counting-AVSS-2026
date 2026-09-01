@@ -262,7 +262,50 @@ Gaussian Kernels
 $\downarrow$  
 GT Density Map  
 
-Verify that the generated maps approximately satisfy: $\sum D \approx N$.
+Verify that the generated maps approximately satisfy: $\sum D \approx N$.  
+
+## 10. Training
+
+Run the main training script:
+
+python CSRNet_main_train.py
+
+The complete training pipeline is
+
+Training Images + GT Density Maps
+                │
+                ▼
+             Dataset
+                │
+                ▼
+            DataLoader
+                │
+                ▼
+       Lightweight CC Model
+                │
+                ▼
+      Estimated Density Map
+                │
+                ▼
+          Loss Function
+                │
+                ▼
+           Backpropagation
+                │
+                ▼
+             Optimizer
+                │
+                ▼
+          LR Scheduler
+                │
+                ▼
+        Parameter Update
+                │
+                ▼
+            Validation
+                │
+                ▼
+      Best Checkpoint Saving
 
 
 
