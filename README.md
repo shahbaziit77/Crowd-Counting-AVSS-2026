@@ -213,20 +213,20 @@ ShanghaiTech/
 ├── part_A_final/
 │   ├── train_data/
 │   │   ├── images/
-│   │   └── ground_truth/
+│   │   └── ground-truth/
 │   │
 │   └── test_data/
 │       ├── images/
-│       └── ground_truth/
+│       └── ground-truth/
 │
 └── part_B_final/
     ├── train_data/
     |   ├── images/
-    │   └── ground_truth/
+    │   └── ground-truth/
     |
     └── test_data/
         ├── images/
-        └── ground_truth/
+        └── ground-truth/
 ```
 
 **Step 3: Configure dataset paths**<br>
