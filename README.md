@@ -103,7 +103,7 @@ Lightweight Crowd Counting: Density Regression Refiner Framework/
                               8. Data augmentation.<br>
                               9. PyTorch Dataset implementation.<br>
                               10. Returning image/density-map pairs to the DataLoader.<br>
-  - **`__init__.py`** — Initializes the `data` package.
+  - **`__init__.py`** — Initializes the `data` directory as a Python package and enables importing dataset-related modules.
 
 - **`model/`** — Network architectures and model components.
   - **`CSRnet.py`** — Main crowd counting architecture containing pretrained lightweight backbones, feature refiner module (FRM): CBAM, and pyramidal feature fusion modules (PFFMs): FPN/PANet/BiFPN.
