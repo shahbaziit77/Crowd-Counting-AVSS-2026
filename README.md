@@ -408,7 +408,8 @@ A typical output contains:
 │   Input Image   │  GT Density Map  │ Estimated Density   │
 │                 │                  │        Map          │
 ├─────────────────┼──────────────────┼─────────────────────┤
-│ Crowd Scene     │ GT Count: C      │ Pred. Count: Ĉ      │
+│ Crowd Scene     │ GT Count: $c$    │ Estimated Count:    │
+│                 │                  │    $\hat{c}$        │
 └─────────────────┴──────────────────┴─────────────────────┘
 ``` 
 
