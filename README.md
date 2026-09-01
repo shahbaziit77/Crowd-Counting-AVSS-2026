@@ -92,17 +92,16 @@ Lightweight Crowd Counting: Density Regression Refiner Framework/
 ### 📂 File Descriptions
 
 - **`data/`** — Dataset loading and preprocessing.
-  - **`CSRNet_dataset.py`** — Dataset loading, dataset path generation, preprocessing, and preparation of image–density map pairs:<br>
-         1. Reading crowd images.<br>
-         2. Reading corresponding ground-truth density maps.<br>
-         3. Generating image and GT paths.<br>
-         4. Train/validation/test data handling.<br>
-         5. Image preprocessing.<br>
-         6. Image resizing.<br>
-         7. Density map resizing and count-preserving scaling.<br>
-         8. Data augmentation.<br>
-         9. PyTorch Dataset implementation.<br>
-         10. Returning image/density-map pairs to the DataLoader.<br>
+  - **`CSRNet_dataset.py`** — This script includes:<br>
+         1. Dataset loading: Reading crowd images and the corresponding ground-truth (GT) density maps.<br>
+         2. Dataset path generation: generating image and GT paths.<br>
+         3. Train/validation/test data handling.<br>
+         4. Image preprocessing.<br>
+         5. Image resizing.<br>
+         6. Density map resizing and count-preserving scaling.<br>
+         7. Data augmentation.<br>
+         8. PyTorch Dataset implementation.<br>
+         9. Returning image/density-map pairs to the DataLoader.<br>
   - **`__init__.py`** — Initializes the `data` directory as a Python package and enables importing dataset-related modules.
 
 - **`model/`** — Network architectures and model components.
@@ -123,11 +122,31 @@ Lightweight Crowd Counting: Density Regression Refiner Framework/
          7. Density regression modules.
 
 - **`gt_generation/`** — Ground truth (GT) density map generation.
-  - **`density_map_generation.py`** — Generates density maps using Geometry-Adaptive Kernel (GAK) and Fixed Gaussian Kernel (FGK) approaches.
+  - **`density_map_generation.py`** — Generates ground truth (GT) crowd density maps from annotated head locations.<br>
+         Two density-map generation strategies are supported:<br>
+         1. Geometry-Adaptive Kernel (GAK).<br>
+         2. Fixed Gaussian Kernel (FGK).<br>
+         The generated density maps are used as regression targets during network training.
  
 - **`BBLiteV4.py`** — This script includes pretrained BBLiteV4 lightweight backbone. 
 
-- **`CSRNet_main_train.py`** — Main training and validation script, including optimizer, learning rate (LR) scheduling, loss computation, checkpoints saving, Params (M), GFLOPs, latency, FPS, and model size evaluation.
+- **`CSRNet_main_train.py`** — Main training and validation script.<br>
+       The script contains the complete training pipeline, including:<br>
+       1. Model initialization.<br>
+       2. Dataset loading.<br>
+       3. Training.<br>
+       4. Validation.<br>
+       5. Loss computation.<br>
+       6. Optimizer configuration.<br>
+       7. Learning rate (LR) configuration and scheduling.<br>
+       8. Model checkpoint saving.<br>
+       9. Best model selection.<br>
+       10. Parameter count: Params (M) calculation.<br>
+       11. GFLOPs calculation.<br>
+       12. Model size calculation.
+       13. Density map quality: PSNR and SSIM calculation.<br>
+       14. Inference latency and FPS measurement.<br>
+       15. Training/validation performance monitoring.
 
 - **`CSRNet_test2.py`** — Testing and inference script for loading checkpoints and visualizing input images, ground truth (GT) density maps, and estimated density maps.
 
