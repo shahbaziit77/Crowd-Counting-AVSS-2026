@@ -627,6 +627,7 @@ Lightweight Crowd Counting
     ├── MAE / RMSE
     ├── GT Density Map
     └── Estimated Density Map
+```
 
 ## Disclaimer
 This repository is intended primarily for academic research and reproducibility of the associated conference paper. Dataset licenses, pretrained model licenses, and third-party software licenses should be respected separately.
