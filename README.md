@@ -45,7 +45,7 @@ The corresponding ground-truth count is $c=\sum_{x,y}D(x,y)$, where $D$ represen
 The main objective of this project is to achieve a favorable **accuracy–efficiency trade-off**, making the model suitable not only for crowd counting benchmarks but also for resource-constrained and edge-computing environments.
 
 # 2. Network Architecture  
-The general processing pipeline:  
+The general architecture pipeline:  
 Input Image $I$  
 $\downarrow$  
 Pretrained Lightweight Backbone $\rightarrow$ Multi-scale Features Representation  
