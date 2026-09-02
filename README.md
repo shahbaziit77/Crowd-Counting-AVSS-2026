@@ -327,8 +327,6 @@ The pretrained backbone weights and the trained checkpoint of our proposed light
 | BBLiteV4.pth.tar | Pretrained BBLiteV4 backbone weights | Google Drive [https://drive.google.com/drive/u/0/folders/1408cv4cNRZVrJEgKEc4EpIkAV68f5euk] |
 | model_checkpoint.pth | Trained EfficientNet-B0 + CBAM + BiFPN crowd counting model checkpoint | Google Drive [https://drive.google.com/drive/u/0/folders/10rMD-6GSbI5X3kCADl0nggOaT-5C_r-U] |  
 
-Note: Replace the Google Drive placeholders above with the public/shareable links to the corresponding files.  
-
 **Directory Structure**  
 After downloading the weights, place them in the following directories:
 ```text
