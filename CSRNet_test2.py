@@ -87,20 +87,27 @@ model = model.cuda()
 #---------------------------------------
 # Step 1: Load checkpoint1 → model1
 #---------------------------------------
+# For ShanghaiTech Part_A (SHT_A) dataset:
+# checkpoint1_path = './weights/EfficientNet_B0_CBAM_BiFPN/\
+# training01_256x256_val_256x256/saved_model/model_MAE_67.pth'
+
+# For UCF-QNRF dataset:
 checkpoint1_path = './weights/EfficientNet_B0_CBAM_BiFPN_UCF-QNRF/\
 training01_256x256_val_256x256/saved_model/model_MAE_67.pth'
 
+# For ShanghaiTech Part_A (SHT_A) dataset:
 # checkpoint1_path_MoblieNetV1_0_25 = (
 #     "./weights/"
-#     " trained_weights_MobileNetV1_0_25/"
+#     " MobileNetV1_0_25_CBAM_BiFPN/"
 #     "training01_256x256_val_256x256/"
 #     "saved_model/"
 #     "model_MAE_24.pth"  
 # )
 
+# For ShanghaiTech Part_A (SHT_A) dataset:
 # checkpoint1_path_MoblieNetV1_0_5 = (
 #     "./weights/"
-#     " trained_weights_MobileNetV1_0_5/"
+#     " MobileNetV1_0_5_CBAM_BiFPN/"
 #     "training01_256x256_val_256x256/"
 #     "saved_model/"
 #     "model_MAE_65.pth"  
