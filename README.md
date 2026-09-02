@@ -320,11 +320,11 @@ The pretrained backbone weights and the trained checkpoint of our proposed light
 **Download Weights**
 | Weight | Model | Download Path |
 |---|---|---|
-| mobilenetV1X0.25_pretrain.tar | Pretrained MobileNetV1_0.25 backbone weights | Google Drive |
-| MobileNetV1x0_5.tar | Pretrained MobileNetV1_0.5 backbone weights | Google Drive  |
-| MobileNetV1.tar | Pretrained MobileNetV1_1.0 backbone weights | Google Drive |
-| BBLiteV4.pth.tar | Pretrained BBLiteV4 backbone weights | Google Drive |
-| model_checkpoint.pth | Trained EfficientNet-B0 + CBAM + BiFPN crowd counting model checkpoint | Google Drive |  
+| mobilenetV1X0.25_pretrain.tar | Pretrained MobileNetV1_0.25 backbone weights | Google Drive [https://drive.google.com/drive/u/0/folders/1408cv4cNRZVrJEgKEc4EpIkAV68f5euk] |
+| MobileNetV1x0_5.tar | Pretrained MobileNetV1_0.5 backbone weights | Google Drive [https://drive.google.com/drive/u/0/folders/1408cv4cNRZVrJEgKEc4EpIkAV68f5euk] |
+| MobileNetV1.tar | Pretrained MobileNetV1_1.0 backbone weights | Google Drive [https://drive.google.com/drive/u/0/folders/1408cv4cNRZVrJEgKEc4EpIkAV68f5euk] |
+| BBLiteV4.pth.tar | Pretrained BBLiteV4 backbone weights | Google Drive [https://drive.google.com/drive/u/0/folders/1408cv4cNRZVrJEgKEc4EpIkAV68f5euk] |
+| model_checkpoint.pth | Trained EfficientNet-B0 + CBAM + BiFPN crowd counting model checkpoint | Google Drive [https://drive.google.com/drive/u/0/folders/10rMD-6GSbI5X3kCADl0nggOaT-5C_r-U] |  
 
 Note: Replace the Google Drive placeholders above with the public/shareable links to the corresponding files.  
 
