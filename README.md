@@ -663,7 +663,6 @@ If you use this repository, model, or implementation in your research, please ci
 Please replace this entry with the official bibliographic information after publication.
 
 ## 24. Paper
-
 Paper:
 <Official Paper/DOI Link>
 
@@ -742,5 +741,4 @@ Lightweight Crowd Counting
 
 ## Disclaimer
 This repository is intended primarily for academic research and reproducibility of the associated conference paper. Dataset licenses, pretrained model licenses, and third-party software licenses should be respected separately.
-
 
