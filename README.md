@@ -175,7 +175,7 @@ The framework can be adapted to commonly used crowd counting benchmark datasets 
 
 **Download Datasets**
 | Datset | Official download | 
-|---|---|---|
+|---|---|
 | ShanghaiTech Part_A & Part_B |  | 
 | UCF_CC_50 |  |
 | UCF-QNRF |  |  
