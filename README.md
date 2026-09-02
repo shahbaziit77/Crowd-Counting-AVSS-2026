@@ -171,7 +171,7 @@ Thus, $\sum D'\approx\sum D$.
 The framework can be adapted to commonly used crowd counting benchmark datasets such as:<br> 
 
 **Download Datasets**
-| Datset | Official Download | 
+| Dataset | Official Download | 
 |---|---|
 | ShanghaiTech Part_A & Part_B | https://github.com/desenzhou/ShanghaiTechDataset  | 
 | UCF_CC_50 | https://www.crcv.ucf.edu/data/ucf-cc-50/ |
