@@ -173,6 +173,13 @@ The framework can be adapted to commonly used crowd counting benchmark datasets 
 2. UCF_CC_50.<br>
 3. UCF-QNRF.
 
+**Download Datasets**
+| Datset | Official download | 
+|---|---|---|
+| ShanghaiTech Part_A & Part_B |  | 
+| UCF_CC_50 |  |
+| UCF-QNRF |  |  
+
 Other point-annotation-based crowd-counting datasets.  
 The exact dataset organization should be modified according to the path generation logic in:  
 data/CSRNet_dataset.py
