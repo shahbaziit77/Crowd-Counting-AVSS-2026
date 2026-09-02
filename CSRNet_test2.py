@@ -87,7 +87,7 @@ model = model.cuda()
 #---------------------------------------
 # Step 1: Load checkpoint1 → model1
 #---------------------------------------
-checkpoint1_path = './weights/trained_weights_EfficientNet_B0/\
+checkpoint1_path = './weights/EfficientNet_B0_CBAM_BiFPN_UCF-QNRF/\
 training01_256x256_val_256x256/saved_model/model_MAE_67.pth'
 
 # checkpoint1_path_MoblieNetV1_0_25 = (
