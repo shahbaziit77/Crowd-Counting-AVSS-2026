@@ -626,7 +626,7 @@ For maximum reproducibility, version-pinned dependencies are recommended.
 ## 21. Hardware  
 Experiments were performed using:<br>
 GPU       : NVIDIA A100 80GB PCIe GPU<br>
-CPU       : <Intel Core i5<br>
+CPU       : Intel Core i5<br>
 CUDA      : CUDA version: 13.2<br>
 PyTorch   : PyTorch 2.5.1<br>
 Python    : Python 3.10.6<br>
