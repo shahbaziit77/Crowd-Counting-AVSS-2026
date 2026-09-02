@@ -60,7 +60,7 @@ data_path_UCF_QNRF = data_path_gen_UCF_QNRF(root_UCF_QNRF)     # UCF-QNRF
 # test_img_paths = data_path_UCF_CC_50      # UCF_CC_50
 test_img_paths = data_path_UCF_QNRF[1]    # UCF-QNRF   
 
-#test_img_paths = '/Path/to/ShanghaiTech/dataset/ShanghaiTech_dataset/part_A_final'     
+#test_img_paths = './dataset/ShanghaiTech_dataset/part_A_final'     
 
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
