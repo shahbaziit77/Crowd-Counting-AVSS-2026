@@ -311,7 +311,7 @@ Example criterion:
 Lowest validation MAE  
 or another criterion specified in the training script.  
 
-## 1) Pretrained and Trained Weights  
+## Pretrained and Trained Weights  
 The pretrained backbone weights and the trained checkpoint of our proposed lightweight crowd counting (CC) model: density regression refiner framework, are provided through Google Drive.
 
 **Download Weights**
@@ -336,7 +336,7 @@ weights/
 |   └── MobileNetV1.tar
 |   └── BBLiteV4.pth.tar
 │
-└── EfficientNet_B0_CBAM_BiFPN/        (For SHT_A dataset)
+├── EfficientNet_B0_CBAM_BiFPN/        (For SHT_A dataset)
 |    └── training01_256x256_val_256x256/
 |        └── saved_model/
 |            └── model_checkpoint.pth
@@ -350,8 +350,8 @@ weights/
 ```
 
 The complete relevant repository structure should therefore look like:
-
-Lightweight-Crowd-Counting/
+```text
+Lightweight Crowd Counting: Density Regression Refiner Framework/
 │
 ├── data/
 │   ├── __init__.py
@@ -378,47 +378,14 @@ Lightweight-Crowd-Counting/
 ├── requirements.txt
 ├── LICENSE
 └── README.md
-1. Pretrained MobileNetV1 Weights
+```
 
-The pretrained MobileNetV1 backbone weights can be downloaded from:
+The checkpoint can then be loaded for evaluation using the testing script:<br>
+python CSRNet_test2.py  
+Weight Usage  
 
-Download MobileNetV1.tar from Google Drive
-
-After downloading, save the file at:
-
-./weights/Pretrained_weights/MobileNetV1.tar
-
-The corresponding path used in the implementation is:
-
-pretrained_path = "./weights/Pretrained_weights/MobileNetV1.tar"
-
-These weights are used to initialize the MobileNetV1 backbone before training the crowd-counting network.
-
-2. Trained Crowd-Counting Model
-
-The trained checkpoint for the EfficientNet-B0 + CBAM + BiFPN configuration can be downloaded from:
-
-Download model_checkpoint.pth from Google Drive
-
-After downloading, save the checkpoint at:
-
-./weights/EfficientNet_B0_CBAM_BiFPN/training01_256x256_val_256x256/saved_model/model_checkpoint.pth
-
-The corresponding checkpoint path can be specified as:
-
-checkpoint_path = (
-    "./weights/EfficientNet_B0_CBAM_BiFPN/"
-    "training01_256x256_val_256x256/"
-    "saved_model/model_checkpoint.pth"
-)
-
-The checkpoint can then be loaded for evaluation using the testing script:
-
-python CSRNet_test2.py
-Weight Usage
-
-The overall workflow is:
-
+The overall workflow is:<br>
+```text
 MobileNetV1.tar
       │
       ▼
@@ -447,22 +414,11 @@ Estimated Density Map
       │
       ▼
 Estimated Crowd Count
-Important
+```
 
-The weight files are hosted externally because trained model checkpoints can be relatively large. They are therefore not necessarily included directly in this GitHub repository.
-
+**Important**  
+The weight files are hosted externally because trained model checkpoints can be relatively large. They are therefore not necessarily included directly in this GitHub repository.  
 Please ensure that the downloaded files retain their original filenames and are placed in the exact directory structure shown above before running the corresponding training or testing scripts.
-
-
-
-
-
-
-
-
-
-
-
 
 ## 12. Testing  
 After training, evaluate the model using:<br>
