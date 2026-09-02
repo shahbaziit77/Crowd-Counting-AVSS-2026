@@ -168,13 +168,9 @@ a count-preserving scaling can be written as $D'=Resize(D)\frac{hw}{h'w'}$.
 Thus, $\sum D'\approx\sum D$.  
 
 ## 5. Datasets  
-The framework can be adapted to commonly used crowd counting benchmark datasets such as:<br>  
-1. ShanghaiTech: ShanghaiTech Part_A (SHT_A), ShanghaiTech Part_B (SHT_B).<br>
-2. UCF_CC_50.<br>
-3. UCF-QNRF.
-
+The framework can be adapted to commonly used crowd counting benchmark datasets such as:<br> 
 **Download Datasets**
-| Datset | Official download | 
+| Datset | Official Download | 
 |---|---|
 | ShanghaiTech Part_A & Part_B |  | 
 | UCF_CC_50 |  |
