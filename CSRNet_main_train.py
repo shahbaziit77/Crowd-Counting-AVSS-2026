@@ -278,7 +278,7 @@ test_loader = DataLoader(dataset=test_set, batch_size=batch_size_test, shuffle=F
 
 
 # Create a folder to save the checkpoints
-checkpoints = './weights/training01_EfficientNet_B0_256x256_val_256x256/saved_model'    
+checkpoints = './weights/EfficientNet_B0_CBAM_BiFPN/training01_256x256_val_256x256/saved_model'    
 
 # os.makedirs(checkpoints, exist_ok=True)
 
