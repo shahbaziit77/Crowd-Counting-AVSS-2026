@@ -299,7 +299,7 @@ CSRNet_main_train.py
 
 A typical checkpoint directory may be
 ```text
-weights/training01_EfficientNet_B0_256x256_val_256x256/saved_model/
+weights/EfficientNet_B0_CBAM_BiFPN/training01_256x256_val_256x256/saved_model/
 │
 ├── model_checkpoint.pth
 ├── model_MAE_<best_MAE_epoch_number>.pth (for e.g., model_MAE_114.pth)
