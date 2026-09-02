@@ -314,39 +314,40 @@ or another criterion specified in the training script.
 ## 1) Pretrained and Trained Weights  
 The pretrained backbone weights and the trained checkpoint of our proposed lightweight crowd counting (CC) model: density regression refiner framework, are provided through Google Drive.
 
-Download Weights
+**Download Weights**
 | Weight | Model | Download Path |
 |---|---|---|
 | mobilenetV1X0.25_pretrain.tar | Pretrained MobileNetV1_0.25 backbone weights | Google Drive |
 | MobileNetV1x0_5.tar | Pretrained MobileNetV1_0.5 backbone weights | Google Drive  |
 | MobileNetV1.tar | Pretrained MobileNetV1_1.0 backbone weights | Google Drive |
 | BBLiteV4.pth.tar | Pretrained BBLiteV4 backbone weights | Google Drive |
-| model_checkpoint.pth | Trained EfficientNet-B0 + CBAM + BiFPN crowd counting model checkpoint | Google Drive |
+| model_checkpoint.pth | Trained EfficientNet-B0 + CBAM + BiFPN crowd counting model checkpoint | Google Drive |  
 
+Note: Replace the Google Drive placeholders above with the public/shareable links to the corresponding files.  
 
-
-
-
-
-Weight	Description	Download
-MobileNetV1.tar	Pretrained MobileNetV1 backbone weights	Google Drive
-model_checkpoint.pth	Trained EfficientNet-B0 + CBAM + BiFPN crowd-counting model checkpoint	Google Drive
-
-Note: Replace the Google Drive placeholders above with the public/shareable links to the corresponding files.
-
-Directory Structure
-
+**Directory Structure**  
 After downloading the weights, place them in the following directories:
-
+```text
 weights/
 │
 ├── Pretrained_weights/
-│   └── MobileNetV1.tar
+│   └── mobilenetV1X0.25_pretrain.tar
+|   └── MobileNetV1x0_5.tar
+|   └── MobileNetV1.tar
+|   └── BBLiteV4.pth.tar
 │
-└── EfficientNet_B0_CBAM_BiFPN/
+└── EfficientNet_B0_CBAM_BiFPN/        (For SHT_A dataset)
+|    └── training01_256x256_val_256x256/
+|        └── saved_model/
+|            └── model_checkpoint.pth
+|            └── model_MAE_<best_MAE_epoch_number>.pth (for e.g., model_MAE_114.pth)
+|
+└── EfficientNet_B0_CBAM_BiFPN_UCF-QNRF/     (For UCF-QNRF dataset)      
     └── training01_256x256_val_256x256/
         └── saved_model/
             └── model_checkpoint.pth
+            └── model_MAE_<best_MAE_epoch_number>.pth (for e.g., model_MAE_67.pth)
+```
 
 The complete relevant repository structure should therefore look like:
 
