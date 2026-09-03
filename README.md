@@ -12,7 +12,7 @@ Department of Electronics and Electrical Engineering, Indian Institute of Techno
 This repository provides the source code for our **lightweight crowd-counting framework: Density regression refiner framework** based on density-map regression. The framework combines a **pretrained lightweight backbone, attention-based feature refinement**, **pyramidal multi-scale feature fusion**, and a lightweight **density regression head** to estimate crowd density maps and corresponding crowd counts.
 The implementation includes:  
 1. Dataset loading and preprocessing
-2. Ground-truth (GT) density map generation:<br>
+2. Ground-truth (GT) density map generation:<br>   
    a. Geometry-Adaptive Kernel (GAK)<br>
    b. Fixed Gaussian Kernel (FGK)<br>
 3. Lightweight pretrained backbone loading
