@@ -394,7 +394,7 @@ MobileNetV1.tar
 Pretrained Backbone Initialization
       │
       ▼
-Crowd Counting Network
+Crowd Counting Network   
       │
       ▼
 Training
