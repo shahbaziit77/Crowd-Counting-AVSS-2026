@@ -359,92 +359,92 @@ for img_path in train_img_paths:
     #----------------------------------------------
     # WorldExpo'10 dataset:
     #----------------------------------------------
-    height, width = annotations.shape
-    for y in range(height):
-        for x in range(width):
-            if annotations[y, x] > 0:  # Annotation value > 0 for the head annotation and annotation value = 0 for non-head annotation
-                points.append([x, y])  # Store as [x, y]
+    # height, width = annotations.shape
+    # for y in range(height):
+    #     for x in range(width):
+    #         if annotations[y, x] > 0:  # Annotation value > 0 for the head annotation and annotation value = 0 for non-head annotation
+    #             points.append([x, y])  # Store as [x, y]
     
-                density_map = generate_density_map_fixed_gaussian_kernel(img, points)    
+    #             density_map = generate_density_map_fixed_gaussian_kernel(img, points)    
     
-                with h5py.File(img_path.replace('.jpg', '.h5').replace('img', 'den/GT_h5_FGK_sigma_4'), 'w') as hf:                                      
-                    hf['density'] = density_map 
+    #             with h5py.File(img_path.replace('.jpg', '.h5').replace('img', 'den/GT_h5_FGK_sigma_4'), 'w') as hf:                                      
+    #                 hf['density'] = density_map 
     
-            else: 
-                # Check the empty annotations
-                # Generate a zero density map
-                print('Generate a zero density map')
-                density_map = np.zeros((h, w), dtype=np.float32) 
-                print('Density map done.')    
+    #         else: 
+    #             # Check the empty annotations
+    #             # Generate a zero density map
+    #             print('Generate a zero density map')
+    #             density_map = np.zeros((h, w), dtype=np.float32) 
+    #             print('Density map done.')    
 
-                with h5py.File(img_path.replace('.jpg', '.h5').replace('img', 'den/GT_h5_FGK_sigma_4'), 'w') as hf:                                      
-                    hf['density'] = density_map  
+    #             with h5py.File(img_path.replace('.jpg', '.h5').replace('img', 'den/GT_h5_FGK_sigma_4'), 'w') as hf:                                      
+    #                 hf['density'] = density_map  
     #----------------------------------------------------------------------------------------------------------------------------------------
 
     #----------------------------------------------------------------------------------------------------------------------------------------
     #--------------------------------------------------
     # NWPU-Crowd dataset:
     #--------------------------------------------------
-    # Check for the empty annotations
-    # if 'annPoints' in mat and len(mat['annPoints']) == 0:
-    if len(pts) == 0:
-        # Generate a zero density map
-        print('Generate a zero density map')
-        density_map = np.zeros((h, w), dtype=np.float32) 
-        print('Density map done.')
+    # # Check for the empty annotations
+    # # if 'annPoints' in mat and len(mat['annPoints']) == 0:
+    # if len(pts) == 0:
+    #     # Generate a zero density map
+    #     print('Generate a zero density map')
+    #     density_map = np.zeros((h, w), dtype=np.float32) 
+    #     print('Density map done.')
 
-        with h5py.File(img_path.replace('.jpg', '.h5').replace('images', 'ground_truth/GT_h5_FGK_sigma_10'), 'w') as hf:                                         
-            hf['density'] = density_map  
-    else:
-        for pt in pts:
-            x, y = pt[0], pt[1]   
-            points.append([y, x])             # Convert (col, row) to (row, col)   
+    #     with h5py.File(img_path.replace('.jpg', '.h5').replace('images', 'ground_truth/GT_h5_FGK_sigma_10'), 'w') as hf:                                         
+    #         hf['density'] = density_map  
+    # else:
+    #     for pt in pts:
+    #         x, y = pt[0], pt[1]   
+    #         points.append([y, x])             # Convert (col, row) to (row, col)   
         
-            density_map = generate_density_map_fixed_gaussian_kernel(img, points)    
+    #         density_map = generate_density_map_fixed_gaussian_kernel(img, points)    
     
-            with h5py.File(img_path.replace('.jpg', '.h5').replace('images', 'ground_truth/GT_h5_FGK_sigma_10'), 'w') as hf:                                         
-                hf['density'] = density_map  
+    #         with h5py.File(img_path.replace('.jpg', '.h5').replace('images', 'ground_truth/GT_h5_FGK_sigma_10'), 'w') as hf:                                         
+    #             hf['density'] = density_map  
     #----------------------------------------------------------------------------------------------------------------------------------------
 
     #----------------------------------------------------------------------------------------------------------------------------------------
     #----------------------------------------------------
     # JHU-CROWD++ dataset:
     #----------------------------------------------------
-    # Accessing the data
-    # Check for the empty annotations
-    if txt.ndim >= 2:
-        # If txt is >= 1D
-        x_coords = txt[:, 0]          # Assuming the first column is x coordinates
-        y_coords = txt[:, 1]          # Assuming the second column is y coordinates
-        # You can continue this pattern for more dimensions if needed
+    # # Accessing the data
+    # # Check for the empty annotations
+    # if txt.ndim >= 2:
+    #     # If txt is >= 1D
+    #     x_coords = txt[:, 0]          # Assuming the first column is x coordinates
+    #     y_coords = txt[:, 1]          # Assuming the second column is y coordinates
+    #     # You can continue this pattern for more dimensions if needed
          
-        pts = [x_coords, y_coords]  
+    #     pts = [x_coords, y_coords]  
    
-        # Convert tuple elements to strings and join them into a single string
-        pt_x = ''.join(str(item) for item in pts[0].shape)
-        pt_y = ''.join(str(item) for item in pts[1].shape)    
+    #     # Convert tuple elements to strings and join them into a single string
+    #     pt_x = ''.join(str(item) for item in pts[0].shape)
+    #     pt_y = ''.join(str(item) for item in pts[1].shape)    
 
-        ann_points = []
+    #     ann_points = []
 
-        for i in range(int(pt_x)):                                       
-            x, y = pts[0][i], pts[1][i]    
-            ann_points.append([y, x])             # Convert (col, row) to (row, col) 
+    #     for i in range(int(pt_x)):                                       
+    #         x, y = pts[0][i], pts[1][i]    
+    #         ann_points.append([y, x])             # Convert (col, row) to (row, col) 
     
-            density_map = generate_density_map_fixed_gaussian_kernel(img, ann_points)    
+    #         density_map = generate_density_map_fixed_gaussian_kernel(img, ann_points)    
     
-            with h5py.File(img_path.replace('.jpg', '.h5').replace('images', 'gt/GT_h5_FGK_sigma_10'), 'w') as hf:                                          
-                hf['density'] = density_map  
+    #         with h5py.File(img_path.replace('.jpg', '.h5').replace('images', 'gt/GT_h5_FGK_sigma_10'), 'w') as hf:                                          
+    #             hf['density'] = density_map  
 
-    else: 
-        # Check for the empty annotations
-        # If txt is <= 1D
-        # Generate a zero density map
-        print('Generate a zero density map')
-        density_map = np.zeros((h, w), dtype=np.float32)
-        print('Density map done.')
+    # else: 
+    #     # Check for the empty annotations
+    #     # If txt is <= 1D
+    #     # Generate a zero density map
+    #     print('Generate a zero density map')
+    #     density_map = np.zeros((h, w), dtype=np.float32)
+    #     print('Density map done.')
 
-        with h5py.File(img_path.replace('.jpg', '.h5').replace('images', 'gt/GT_h5_FGK_sigma_10'), 'w') as hf:                                          
-            hf['density'] = density_map 
+    #     with h5py.File(img_path.replace('.jpg', '.h5').replace('images', 'gt/GT_h5_FGK_sigma_10'), 'w') as hf:                                          
+    #         hf['density'] = density_map 
     #----------------------------------------------------------------------------------------------------------------------------------------------
 
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
